@@ -1,0 +1,74 @@
+﻿For a digital signal x[n], the discrete Fourier transform (DFT) is defined as
+where the DFT X[k] is a discrete periodic function of period N. Therefore one period of distinct values are only taken
+at k = 0,1,2,..., N −1.
+Note that the DFT Eq.(6.1) only has defined the transform over 0 ≤ n ≤ N −1, otherwise not known or not cared. This
+is different from Fourier series in which the signal is strictly periodic or the discrete version of Fourier transform in which
+the signal is non-periodic but defined over − ∞ < n < ∞. The comparison is made in Table 6.1. The DFT matches most
+of the practical cases in which only limited record is available from a certain measurement.
+The inverse discrete Fourier transform (IDFT) is
+where x[n] is a periodic function of period N. Distinct values can be taken from one period at n = 0,1,2,..., N −1
+. For this reason, we can assume the original signal x[n] in the above DFT formula has been extended to a signal of
+periodic of N. i.e., the DFT considers a non-periodic signal x[n] to be periodic only for the purpose of mathematic
+convenience. Otherwise, the summation in the DFT formula is not to run for N samples 0 ≤ n ≤ N −1 but the whole
+axis − ∞ < n < ∞ and to obtain a continuous spectrum X (W) . Table 6.1 has listed the definitions of Fourier series,
+discrete version of Fourier Transform and DFT for comparison.
+In the following Figure 6.2, the difference between the DFT and discrete version of FT are compared. The upper left is a
+non-periodic signal with N samples in 0 ≤ n ≤ N −1 in which zeros are given to all outside the N records. The upper
+right is its discrete version of Fourier transform which is a continuous function. The lower left is the signal in which the
+N samples are regarded as one period and the record has been extended to the whole axis − ∞ < n < ∞. Therefore, like
+Fourier series, its periodic discrete spectrum is shown in the lower right figure.
+In essence, applying the DFT is to decompose a periodic signal to a series of cosine and sine functions represented by
+where k is the frequency of the sinusoidal function which runs through all possibilities from 0 (direct current) to N-1.
+The following figure shows the first few sinusoidal components.
+where r is an arbitrary integer and N is the period. This property says that the shape of the signal stays the same when it
+is shifted to left or right by integer number of N samples.
+where ↔ represents the pair of DFT and IDFT, and A and B are constants. This property includes an equal magnification
+rule, and a superposition rule between the input and output.
+The relationship of convolution between two signals in time domain can be simplified to a multiplication in the frequency
+domain. In the formula, the convolution is defined on one period.
+Likewise to the property 4), the relationship of convolution between two spectra in the frequency domain can be simplified
+to a multiplication in the time domain.
+When x[n] is real signal,
+a) if x[n] is an even function,
+Im(X[k]) =0 (6.9)
+b) if x[n] is an even function,
+Re(X[k]) =0 (6.10)
+This property can be used to simplify and save the calculation.
+Only X[0], X[N/2] and X(k), k=1,2,N/2-1 are needed to represent the whole X[k] (k=0,1,2,…,N-1). i.e. there are a total
+of 2 real and N/2-1 complex coefficients. It can also be proved
+This property tells that the modules of the DFT is symmetrical about the vertical
+Line
+If the signal x[n] is complex, there is no spectral symmetry, and all N coefficients are distinct in general.
+James W. Cooley and JohnW. Tukey in 1965 made a revolutionary invention in calculating the DFT (published in J.W.Cooley
+and J.W. Tukey in Math. Comput., vol. 19, April 1965, pp297-301). In the algorithm known as FFT, redundancy in direct
+calculating complex DFT due to periodicity in sinusoidal functions has been removed, therefore the computing time has
+been remarkably reduced. The principle can be explained in the following.
+If separating x[n] to an eve and an odd sequences
+Eq.(6.14) means a DFT of length N can be equivalent to 2 DFTs of length N/2. As an immediate result, the number
+of distinct complex numbers can be reduced from N kn
+N W to N/2 rk
+N W / 2 in the above DFT summation; thus complex
+multiplications can be greatly reduced in computation. The heart of implementing FFT is to make above division further
+until each DFT has only 2 samples. A requirement is the length of data N is an integer power of 2.
+Therefore, N is chosen to be an integer power of 2, N/2 is even. 2 N/2-point sequences can be decomposed into 2 shorter
+N/4-point sequences. This decomposition continues until all sequences are 2-point sub-sequences, each of which requires
+only a simple 2-point DFT. This procedure produces a radix-2 FFT algorithm.
+For example: Let N=8, the DFT is
+The number of direct calculation of its DFT will be 8 64 2 , approximately. However, it can be divided into 2 length
+N=4 sequences:
+Further, they can be divided in to 4 length N=2 sequences:
+In original DFT, there are approximately N 2 multiplications in (there are some unities when k
+or n=0). However, in the FFT algorithm, redundant computation in multiplying kn
+N W are reduced by re-arranging samples
+to shorter sequences to enable multiplication by much fewer distinct 1
+2
+0
+/ 2 / 4 2 W ,W ,W ,...W and W kn
+N
+kn
+N
+kn
+N in a butterfly shaped
+flow chart. Figure 6.4 illustrates 2 N multiplications in a length N=8 DFT.
+In the following Figure 6.5, two boxes represents 2 length N=4 DFTs. The solid lines represent moves and the doted lines
+represent complex multiplications.

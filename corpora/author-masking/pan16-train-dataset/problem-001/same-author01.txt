@@ -1,0 +1,91 @@
+﻿Computer simulation is used to reduce the risk associated with creating new systems or with making
+changes to existing ones. More than ever, modern organizations want assurance that investments will
+produce the expected results. For instance, an assembly line may be required to produce a particular
+number of autos during an eight hour shift. Complex, interacting factors influence operation and so
+powerful tools are needed to develop an accurate analysis. Over the past few decades, computer
+simulation software, together with statistical analysis techniques have evolved to give decision makers
+tools equal to the task. As the world grows more technical and the need for precision becomes more
+important, the margin for error will continue to shrink. Business, industry, and governments cannot afford
+to make educated guesses during systems development. For that reason, computer simulation is more
+important than ever.
+Simulation uses a model to develop conclusions providing insight on the behavior of real-world elements
+being studied. Computer simulation uses the same concept but requires the model be created through
+computer programming. While this field has grown and flourished with availability of powerful software
+and hardware, its origins in the desire to forecast future behaviors, run quite deep.
+Men and women have attempted to foretell the future since ancient times. Kings employed wizards and
+soothsayers. Various religions used prophets. Seers such as French apothecary Michel de Nostredame
+(better known as Nostradamus) became famous with their visions of the future. Others attempted to make
+predictions based on birth dates and the stars. Crystal balls, bones, and tarot cards were all used as tools to
+probe the future.
+Although this book does not advocate those methods, in the same way modern chemists bear a
+relationship to the ancient alchemist, the modern simulation practitioner has a relationship with the ancient
+prophet. Of course, methodologies used by modern simulation analysts bear virtually no similarity with
+the prediction methods used in ancient times. However, there are common elements. For instance, each
+sought to remove the risk of a future event or behavior and reduce uncertainty. The prophet tried to
+accomplish this with the magic available at the time. Today, the simulation analyst uses the modern magic
+of mathematical principles, experimentation, computer science and statistics.
+Computer simulation can be classified as a branch applied mathematics. The use of computer simulation
+increased due to availability of computing power and improvements in programming languages. Added to
+this are inherent difficulties or even impossibilities to accurately describe complex real world systems
+using analytical or purely mathematical models. For these reasons, a tool that can represent these
+complexities accurately is required. Computer simulation can be broadly defined as:
+“Using a computer to imitate the operations of a real world process or facility according to appropriately
+developed assumptions taking the form of logical, statistical, or mathematical relationships which are
+developed and shaped into a model.”
+The result can be manipulated by varying a set of input parameters to help an analyst understand the
+underlying system’s dynamics. The model typically is evaluated numerically over a simulated period of
+time and data is gathered to estimate real world system characteristics. Generally, the collected data is
+interpreted with statistics like any experiment.
+Computer simulation can be an expensive, time consuming, and complicated problem solving technique.
+Therefore, certain circumstances warrant its use. Situations well suited to its application include the
+following (Table 1.1):
+Real system does not yet exist and building a
+prototype is cost prohibitive, time-consuming or
+hazardous.
+Aircraft, Production System, Nuclear Reactor
+System is impossible to build.
+National Economy, Biological System
+Real system exists but experimentation is too
+expensive, hazardous or disruptive to conduct.
+Proposed Changes to a Materials Handling System,
+Military Unit, Transportation System, Airport
+Baggage Handling System
+Forecasting is required to analyze long time periods
+in a compressed format.
+Population Growth, Forest Fire Spread,
+Urbanization Studies, Pandemic Flu Spread
+Mathematical modeling has no practical analytical
+or numeric solution.
+Stochastic Problems, Nonlinear Differential
+Equations
+Using computer simulation for analysis has many advantages over other decision making techniques.
+Among these advantages are:
+1. Allows Experimentation without Disruptions to Existing Systems - In systems that already exist,
+testing new ideas may be difficult, costly, or impossible. Simulation allows a model to be
+developed and compared to the system to ensure it accurately reflects current operation. Any
+desired modifications can be made to the model first, the impact on the system examined, and
+then a decision to implement the changes in the real world system can be made.
+Example: Changing the Line
+An automotive assembly line may run 24 hours a day, seven days a week. Shutting the line down,
+putting in a temporary modification (which may or may not speed up a process), and resuming
+production would be very expensive.
+Example: Adding Equipment
+Unless the machinery was already purchased, the process of adding it to the line and trying it firsthand
+would be impossible.
+2. Concept can be Tested Prior to Installation - A computer simulation will allow concepts to be
+tested prior to the installation of new systems. This testing may reveal unforeseen design flaws
+and give designers a tool for improvement. If the same flaws were discovered after installation,
+changes to the system might end up being very costly or even impossible to implement.
+Example: Purchase of an Automatic Storage and Retrieval system (ASRS)
+Engineers in a medium sized company decide to replace an existing warehouse with an ASRS. After
+stretching their tight budget to its outer limits, the equipment was procured and installed. Several
+months of usage revealed the new system was unable to keep up with the demands for pallets being
+entering and removed from the racks. Their assembly line process began to bog down because
+material wasn't arriving from storage in a timely fashion. The budget was gone and upper
+management told manufacturing to live with their decision. The entire situation could have been
+avoided by simulating the ASRS system prior to purchase.
+3. Detection of Unforeseen Problems or Bugs - When a system is simulated prior to installation and
+found to work in concept, the model is often refined to include finer details. The detailed
+simulation may reveal unforeseen problems or bugs that may exist in the system's design. By
+discovering these problems prior to installation, debug time and rework costs can be avoided. In
+addition, improvements to system operation may be discovered.

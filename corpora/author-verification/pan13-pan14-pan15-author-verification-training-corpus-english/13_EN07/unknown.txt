@@ -1,0 +1,63 @@
+﻿Data model design belongs to the first development phase of a Laboratory Information Management
+System (LIMS). After model design, LIMS should be developed to enable a flexible integration of the
+heterogeneous data types mentioned above, data sources, and applications. Such systems should provide
+well defined user and data interfaces and fine grained user access levels.
+Consequently, following the specific aims must be considered for LIMS development:
+• Design and development of the LIMS including:
+o An integrated laboratory notebook to store the necessary information during biomaterial
+manipulation.
+o A laboratory information management system to keep track of the information that
+accrues during production in multiwell plates and the screening.
+o Well defined data interfaces for importing, exporting, and handling data.
+o An Plug-in Architecture (PA) to connect other bio applications and link to its data
+without amending the LIMS code.
+o A web-service interface to allow external applications such as data mining tools to query
+and read the stored data and to write back results.
+o The management of experimental data coming from various types of investigations.
+• Initiation, design and implementation of a user management system that provides libraries and
+interfaces which can be integrated in any application to facilitate user authentication and
+authorization.
+• Initiation of database and a web portal to browse and upload screening results and screening
+datasets in order to analyze the compound image analysis in the context of several biological
+assays.
+Currently, there are many LIMS available in life sciences (Table 3). The LIMS is a customizable software
+package and analysis platform designed to be installed in HCS laboratory and to serve many users
+simultaneously via the web or desktop client. LIMS should be able to import data into the database, group
+plate data together into experiments, and in a uniform and streamlined fashion, apply filters and
+transformations and run analyses. To facilitate online collaboration, users can share almost any object
+within the database with another user. Data can be exported in a multitude of formats for local analysis
+and publication. Compounds of a library stored in a library database can be interactively linked with the
+next module called HCS Results Database. The entry results data can begin with the definition of a
+project, screen, run and all experimental protocols presented in Figure 9, goes through definitions of
+biomaterials used, cell culture conditions, experimental treatments, experimental designs, definition of
+experimental variables, to definition of experimental and biological replicates and finally ends with the
+selection of the compound library for the screen. The user of the LIMS should easily simulate the project
+hierarchy via additional GUI interfaces which simulate cases that exist in a real screening process. The
+database should facilitate remote entry of all information concerning the screen, where users may create
+associations of labeled extracts and substances, scanned raw images from microscope and quantification
+matrices (files with results after image analysis). The user may wish to create associations of labeled
+extracts, scanned raw images, quantification matrices. As a single compound located in one well of a
+multiwell plate can be scanned in an automated screening microscope and/or under different settings.
+The researchers that use LIMS are in most cases organized in groups and each user belongs to one or
+more groups. The purpose of the groups is to define a set of users with common permissions over
+elements of the system, in other words, the subsets of plates that a group of users can view or use. The
+groups allow the assignment and management of permissions very easily, but also provide enough
+granularity to control access of the different users to the subsets and plates. A typical HCS unit and their
+users are composed by different groups and laboratories, each of them working in different projects. The
+manager is able to control privileges and is able to create at least one group for LIMS users or research
+group. A specific research group will work with a set of plates and the rest of laboratories should not have
+access to those plates.
+In many cases, there are three types of users or level access in LIMS systems:
+• Manager: This type of user is the responsible of introducing, maintaining and updating the data
+about plates and reporters in the database system. Additionally, the manager defines the screen,
+protocols, robots and external databases and assigns the adequate permissions to the rest of users
+for visualizing the subsets of plates. The manager has total access to the application and can do
+any modification within the database.
+• Researcher: The researcher represent the most general user of the LIMS. This access is limited to
+the visualization and searching of the data from plates. A researcher typically corresponds to a
+scientist of the institute or the laboratory.
+• Guest: This user access has the same privileges as the researcher, the difference is that it should
+be used by different people to access LIMS. The manager must carefully handle the permissions
+of subsets, and allow the visualization of these elements to the guest only if the data are to be
+published.
+HCS data is usually exported from LIMS to third party systems, for either further analysis “warehousing” purposes or archiving. Linkage at the data level via an export is a simple means to deliver HCS data into the enterprise as well as integrate HCS data into laboratory workflows. The informatics architecture therefore needs to support the necessary relational data structures to permit annotation, such as sample identifiers for compounds. In order to push data into the enterprise and link it in, format neutral export tools are required. Over the past years XML (eXtensible Markup Language9) has arisen as the format of choice for data export, as it is self-explaining format (i.e., not only does it contain the data to export but a description of the data in the same file). Any software can interpret XML and it can be translated into other formats, if necessary. Data-level integration has certain advantages: It is relatively straightforward to implement, almost any data can be integrated, and few changes, if any, are required by either the source or target applications. Disadvantages are that an additional copy of the data is made and there may not be

@@ -1,0 +1,81 @@
+﻿There has been a long running debate that concentrates on trying to decide whether simulation should be
+defined as an art or a science. Those who believe it to be a science feel that statistics, mathematics, and
+computer science comprise its foundation and are the basis for this classification. Others feel that the skill
+of the modeling team, the creativity involved in developing the model, and the interpretation of the results
+all add up to an individualized art. In this author's opinion, there is no real way to scientifically structure a
+simulation to guarantee that its results are valid.
+Instead, after the model has been coded and run, the outputs can be studied and compared with
+corresponding known values to determine suitability. If no known values exist then the modeler must rely
+on his instincts and the judgment of experts to make this determination. The creativity and instincts used
+are akin to an art. Much of the methodology involved in model creation and analysis are based on
+computer science and mathematical principles. Therefore, elements of art and science exist in modeling.
+Simulation best may be defined as a “soft-science” containing both.
+Figure 3.1 depicts the spectrum extending from art to science and the simulation's place. In recent years
+simulation has been moving along the spectrum more toward the science end. Improvements in simulation
+languages and the advent of simulators have removed some of the need to be as creative and innovative.
+Much of the uncertainty in model creation has also been eliminated through the development of
+application specific languages.
+Numerous explanations exist for reasons behind the phenomenal growth computer simulation has
+experienced both in terms of application areas and in the number of available software products. Among
+these reasons are:
+1. Improvements in computers: The first simulations were done on large, room-sized mainframe
+computers. These computers relied on card decks and operated most often in the batch mode. Not
+many people had access to these mammoth devices. In the last thirty years, computers have been
+reduced in size and cost considerably. Equivalents of the mainframes that used to occupy large
+rooms are now carried around in briefcase sized packages. Computers have moved from research
+laboratories and can now be found on practically every desk in all industries. The computing
+power of a single chip is fast becoming all that is necessary to run the most sophisticated
+commercial simulation software. This widespread availability and reduction in cost of computers
+has enabled simulation to prosper.
+2. Improvements in simulation products: Thirty years ago, most simulation work was done using
+assembly language, FORTRAN, or other high level languages. Development time was much
+greater, as was debugging, statistic tabulation, and the reliability of results. This situation began to
+change with the advent of GPSS in 1961. Since that time, a multitude of simulation languages,
+analysis programs, animators, and pre-programmed simulators have become available. Much of
+the development time required to create a model has been eliminated through standard features
+found in these products. In addition to performing the necessary simulation functions, varying
+degrees of user friendliness are available. Simulation languages such as Simscript and GPSS/H
+appeal to practitioners with programming skills while non-programmers can enjoy the mouse
+driven menus found in many application specific simulators.
+3. New opportunities for simulation education: Three decades ago, very few universities offered
+discrete event simulation classes. Today many universities offer simulation classes in engineering
+and business curriculums. In addition, private seminars and training sessions are available. These
+sessions are sponsored by simulation software vendors, consultants, and corporations with an
+interest in simulation and modeling. Other sources of simulation education are trade magazines,
+academic publications, conferences, societies, and books.
+4. Increasingly complex and technical work environments: During the previous few decades the
+average work environment has changed from simple manual assembly lines to complex automated
+systems. Many repetitive human tasks have been replaced with robots and factory automation
+equipment. Conveyors, forklift trucks, storage and retrieval racks, as well as many other factory
+floor items are now routinely controlled by programmable logic controllers or computers. This
+new complexity has made factory output rates very difficult to predict and manage. Thus, the need
+for better analysis tools arose. New simulation techniques evolved to satisfy this demand and were
+able to remove much of the guess work and uncertainty in the work place.
+5. Computer literacy among analysts and engineers: Computer literacy and use is nearly ubiquitous
+among professionals. Everyone has the ability to receive computer training.
+6. Competition and tightening budgets - Another factor adding to growth in simulation use is an
+emphasis on lowering overhead costs, reducing labor requirements, and streamlining operations.
+Much of this has come about as globalization has increased competition and businesses compete
+on an international basis.
+7. Realization of the benefits offered by simulation: As more industries recognize the benefits of
+simulation, investing in capabilities to use these tools becomes more important. Apparent
+economic advantages have prompted companies to invest time and resources into this area.
+8. Industrial peer pressure: Organizations without simulation capabilities have found themselves at a
+competitive disadvantage. This was most apparent in industries, such as materials handling, where
+a simulation study accompanying a quotation would lend credibility to a proposed system and
+often become a determining factor when the contract was awarded. A situation of industrial peer
+pressure was created. Purchasers would inquire why simulation was not being used by their
+vendors and demand that some type of through-put guarantee be given. Presently, most materials
+handling system request-for-quotations require modeling be performed prior to purchase. Similar
+requirements exist in other industries. These forces have been a key factor in popularizing
+simulation.
+9. Warm fuzzy feeling: Many companies have developed internal simulation groups to model inhouse
+problems, proposed systems, and existing manufacturing processes. Presentation materials
+such as simulation animation packages have helped to sell internal proposals to management and
+create a corporate warm fuzzy feeling. “Seeing is believing” and many simulation packages
+available today place an emphasis on graphics and output.
+10. Part of an effort to increase quality: Another force related to simulation adoption is a commitment
+to quality improvement processes. The success of these philosophies has been demonstrated in
+many industries with large productivity gains and improved profitability. A major precept of
+quality is prevention of problems. By creating a model of systems to be designed, purchased, or
+installed, costly mistakes can be avoided and installations can be done right the first time.

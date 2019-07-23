@@ -1,0 +1,32 @@
+﻿In this chapter you will learn what an array is, namely a method of storing many values under a single variable name, instead of using a specific variable for each value. We will begin by declaring an array and assign values to it. 
+In connection with arrays you will have great use for loops, by means of which you can efficiently search for a value in the array and sort the values. 
+Arrays is a fundamental concept within programming which will frequently be used in the future.
+An array is, as already mentioned, a method of storing many values of the same data type and usage under a single variable name. Suppose you want to store temperatures measured per day during a month:
+If you didn’t know about arrays, you would need 30 different variable names, for instance:
+This is a bad option, especially if you want to calculate the average temperature or anything else. Then you would need to write a huge program statement for the sum of the 30 variables. 
+Instead, we use an array, i.e. one single variable name followed by an index within square brackets that defines which of the temperatures in the array that is meant:
+The name of the array is temp. The different values in the array are called elements. 
+In this way we can use a loop, where the loop variable represents the index, and do a repeated calculation on each of the temperatures:
+The loop variable i goes from 1 to 30. In the first turn of the loop i has the value 1, which means that temp[i] represents temp[1], i.e. the first temperature. In the second turn of the loop i has the value 2 and temp[i] represents the second temperature. 
+By using a loop the amount of code required will not increase with the number of temperatures to handle. The only thing to be modified is the number of turns that the for loop must execute. 
+In the code below we calculate the average of all the temperatures:
+The variable iSum is set to 0 since it later on will be increased by one temperature at a time. The loop goes from 1 to 30, i.e. equal to the number of elements in the array. In the loop body the variable iSum is increased by one temperature at a time. When the loop has completed, all temperatures have been accumulated in iSum. Finally we divide by 30 to get the average, which is printed.
+Like for all variables, an array must be declared. Below we declare the array temp:
+The number within square brackets indicates how many items the array can hold, 31 in our example. 31 positions will be created in the primary memory each of which can store a double value. The indeces will automatically be counted from 0. This means that the last index is 30. If you need temperatures for the month April, which has 30 days, you have two options: 
+1. Declare temp[30], which means that the indeces goes from 0 to 29. 1st of April will correspond to index 0, 2nd of April to index 1 etc. 30th of April will correspond to index 29. The index lies consequently one step after the actual date. 
+2. Declare temp[31]. Then 1st of April can correspond to index 1, 2nd of April to index 2 etc. 30th of April will correspond to index 30. The date and index are here equal all the time. This means that the item temp[0] is created ”in vain” and will never be used.
+It is no big deal which of the methods you use, but you will have to be conscious about the method selected, because it affects the code you write. We will show examples of both methods. 
+Note that, in the declaration:
+all elements are of the same data type, namely double. For arrays all elements all items always have the same data type.
+You can assign values to an array already at the declaration, e.g.:
+Here the array iNo will hold 5 items, where the first item with index 0 gets the value 23, the second item with index 1 the value 12 etc. 
+The enumeration of the values must be within curly brackets, separated by commas. 
+As a matter of fact it is redundant information to specify the number of items to 5 in the declaration above, since the number of enumerated values is 5. Therefore you could as well write:
+An enumeration within curly brackets can only be written in the declaration of an array. For instance, the following is erroneous:
+In the following code section we declare an array of integers and assign values to the array in the loop:
+The array iSquare is declared to hold 11 items of integer type. The loop then goes from 0 to 10. In the first turn of the loop i is =0 and the item iSquare[0] gets the value 0*0, i.e. 0. In the second turn of the loop i is =1 and iSquare[1] gets the value 1*1, i.e. 1. In the third turn of the loop the item iSquare[2] gets the value 2*2, i.e. 4. Each item will contain a value equal to the square of the index.
+As a C++ programmer you must yourself keep track of the valid index interval. The result could be disastrous if you wrote:
+This means that we store the value 23.5 in the primary memory at an adress that does not belong to the array, but might belong to a memory area used for other data or program code. If you run such a code the system might in worst case break down and you will have to restart the computer.
+Suppose we want to copy the temperatures from the array with April’s values to an array with June’s values. You cannot copy an entire array in this way:
+You will have to copy the values item by item by means of a loop:
+Here the loop goes from 1 to 30 and we copy item by item for each turn of the loop.

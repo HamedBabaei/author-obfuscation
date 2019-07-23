@@ -1,0 +1,73 @@
+﻿After the model has been conceptualized, coded, verified, and validated, it is ready to provide information
+through experimentation. Experimentation is the process of initializing key parameters in the model and
+setting up production runs to make inferences about the behavior of the system under study. The
+experimentation process consists of three steps:
+The first step in the experimentation process is experimental design. The term experimental design implies
+that an experiment is being designed or set up. This is done by identifying key parameters and initializing
+these parameters to values of interest. An example of an input parameter that could be the focus of an
+experiment is the number of doormen needed at the 21-Club (See section 6.3). The simulation could be
+initialized with either one or two doormen. Other issues that need to be resolved during the experimental
+design stage follow:
+A variable Z which can assume any value in the range (x,y) with equal probability is defined as being
+random (Figure 6.7). Random variables can be uniformly or non-uniformly distributed. They may be
+continuous or discrete. Random variables are selected by chance and are not influenced in any way by past
+values. Random numbers are widely used in experiments that are dependent upon chance. Examples of
+these are machine breakdowns, occurrences of rejected parts coming off an assembly line, and service
+times at an automatic teller machine.
+Random numbers can be generated in many different ways. The flip of a coin, drawing numbers from a
+hat, roulette wheels, and playing cards are examples of physical generation methods. The most common
+method of obtaining random numbers for use in the computer simulation field is through algebra. A
+number called a seed is selected and used to produce a sequence of numbers in the following manner
+(Figure 6.2):
+Although the resulting number stream from the preceding example is not truly random, if created properly,
+it will pass most tests for statistical randomness. Number streams generated through algebraic means are
+known as pseudo-random numbers. The use of pseudo-random number streams has several advantages
+over the use of true random numbers including:
+1. The sequence of numbers is reproducible. This means different versions of a program can be
+tested using the same input data.
+2. The streams can be generated quickly and efficiently for use in a simulation program.
+Although it is important to understand the concepts of random number generation and pseudo-random
+number streams, a simulation analyst will rarely have to create his or her own random number generator.
+Most simulation software products already have a built in means of creating pseudo-random numbers. As
+long as care in selecting a seed value (this is usually done for the analyst as well) is taken, very few
+problems should occur. However, this is not a topic to be taken too lightly. Without a reliable stream of
+random numbers, simulation results would be rendered invalid.
+Terminating simulations are models that represent a system that starts in a particular state and then
+terminates or ends after a fixed period of time or when a predetermined condition is reached. Terminating
+simulations are used to model particular manufacturing operations where the characteristics of the system
+startup are important to include or in situations where a specific period of time is being analyzed, like
+weekend ticket sales for a newly released movie. Terminating simulations study a system over a
+predefined time period like a shift, a day, or a week. An analyst using a terminating simulation makes no
+attempt to bring the model to a steady state or stable operating condition. Instead, model replications
+include all startup biases that might exist (as do most real world systems).
+It is important to remember that terminating simulations are still dependent on random samples from input
+distributions and each run must be treated as a single observation. This means replications using different
+random number seeds must be generated and used to compute a confidence interval or range likely to
+include the true value of the mean. Since terminating simulation runs produce output data exhibiting
+statistical independence, the analysis becomes easier.
+Steady state simulations are intended to examine a system from which startup and ending biases are
+removed. In other words, the analyst seeks to achieve a state in the model where conditions remain stable.
+While in many instances this might be less realistic than a terminating simulation, it can be useful in
+determining underlying characteristics of the system and filtering out the statistical noise. Two main
+challenges exist when developing a steady state simulation. The first is determining whether a steady state
+condition has been achieved. The second deals with statistical independence of the derived samples.
+Several techniques are used to deal with the first challenge. Almost every system experiences a period of
+time upon startup where resources are being acquired, customers are entering, or the initial stages of the
+system are in use while subsequent stages have not yet filled. These forces can result in a skewing of
+output statistics often called initial bias (See Figure 6.3). Several practical techniques are used to avoid the
+impact of startup bias. These include:
+1. A warm-up period is determined after which model statistics collection is restarted. Most
+simulation software packages have built-in the capability of resetting statistics. In a sense, this
+would represent throwing out all data collected to the left of the dark line in Figure 6.3 and only
+considering data after that point in time. The analyst may have to review the simulation results
+and decide when the model appears to have entered steady state.
+2. Initializing the model with a realistic, steady state condition of resource utilization and customers
+or other entities strategically placed within the model. This technique can work but must be
+verified as accurate and free of other forms of startup bias. Some researchers call this ‘preloading’
+and others call it priming the model.
+3. Data analysis can be used to remove the bias but this technique is rarely used.
+The second challenge is to ensure collected samples from the simulation are independent. In a steady state
+simulation, the current state of the model is dependent on the previous state. Therefore, independence
+cannot be assumed. In order to correct this problem, a series of simulation runs (often called replications)
+can be constructed in a way that collection of statistics is suspended between replications while the model
+runs in steady state. The resources and entities are not cleared, just the statistics.

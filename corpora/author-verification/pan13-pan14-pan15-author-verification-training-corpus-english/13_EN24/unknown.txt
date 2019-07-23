@@ -1,0 +1,79 @@
+﻿Chapter 7 focuses on taking a simulation project from start to finish. Although the system might seem
+simplistic and could probably be adequately modeled using a spreadsheet, the intent is to demonstrate the
+thought process used in defining, analyzing, and applying modeling principles. The system to be analyzed
+provides a good framework for discussion and will be interesting to a wide variety of simulation (or
+potential simulation) analysts. The project will follow the simulation life cycle illustrated in Chapter 4
+(See Figure 7.1).
+The intelligence phase of the simulation life cycle involves understanding the environment and
+determining problems to be solved. This often starts with a general understanding of the system to be
+modeled together with a problem definition and feasibility considerations.
+DePorres Tours wants to create a simulation to help determine bus capacity for their tour operation and
+then be able to utilize the model in the future to pre-test any changes to their operation. Their current
+problem statement becomes:
+“What size bus will best accommodate expected customer traffic?”
+Specifically, they are looking at buying either a 24 or a 48 passenger bus.
+Before beginning the simulation project, DePorres assessed general feasibility using the TELOS approach
+(See Figure 7.2):
+DePorres Tours recently sent Telly O’Sullivan to a simulation training course and has allocated 4 hours a
+day for him to gather information and conduct the simulation project. Since it is his first project, he has
+been given a month to complete the model. DePorres Tours owner, the indomitable Kafy DePorres has
+informed all drivers, tour guides, and office personnel about the project and strongly encouraged their full
+cooperation. Additionally, a small team of one driver, one tour guide, and Kafy herself will meet with
+Telly weekly to assess his progress and help with any problems. Kafy has set aside adequate funds for the
+project and plans to acquire a simulation software package for model development.
+Telly, anxious to apply what he learned in class, developed a working view of the system to be modeled.
+He used the following definition to help break the tour bus system into its major components.
+System: A set of components or elements that are related to each other in such a manner as to create a
+connected whole.
+Although the table contains some repetitive information, it becomes a working document to help
+understand the system and its basic elements.
+Based on the data shown in Table 7.2, the system environment can be defined as the road system in
+Chicago, existing traffic patterns, and tourism patterns. All these things lie outside the system and have an
+influence on its behavior. The systems boundary separates the tour bus system, together with tourists,
+driver, route, and stops from the environment.
+Telly decided the scope and scale of his model would include the following:
+Scope:
+1) Customer arrivals and departures will be modeled at each bus stop.
+2) Bus driver and bus will be modeled.
+3) Bus travel times along the route will be modeled.
+Scale:
+1) Two customer types will be considered: first time riders and those using the bus as a taxi.
+2) Bus driver and bus will be modeled as a single resource. Bus driver behavior will be averaged
+into bus stop times. In the future this could be redeveloped using bus driver persims.
+3) Bus travel times will be modeled using collected distributions covering an entire day.
+Telly decided to use a process orientation view of the system. In other words, he will view the bus system
+as a time ordered sequence of interrelated events separated by passages of time. This will influence his
+choice of simulation software but is consistent with the recent training he received.
+Telly created a couple of concept models to help understand the system better. First he created a
+spreadsheet that calculated hourly capacity and average route time (Figure 7.2).
+Next he used an Excel spreadsheet with Paul Jensen’s ORMM Queuing Add-ins to create a rough model
+of the bus route if viewed as a queuing system (See Figure 7.3).
+Both models created quick approximations of the system. However, neither sufficiently captured the
+dynamics of the system adequately. This left Telly with no option other than to move ahead with a full
+simulation. Both concept models demonstrated a 24 passenger bus could move around 80-84 people per
+hour but this was in contrast to what had been observed in the real world. Telly suspected the variance in
+the system had not been included in spreadsheets realistically.
+Telly’s next task was to begin data collection in earnest. Although he had calculated quick averages he
+used in the concept models, he wanted to develop more accurate information. He did this by visiting each
+bus stop and collecting customer arrival times as they waited for the bus. Table 7.3 provides a look at the
+data he collected at Bus Stop #1. He loaded this into Stat::Fit 2 and determined the tourists were arriving
+according to a Poisson distribution with a mean of 3.58 minutes (See Figure 7.4).
+Telly repeated his data collection for the other 4 stops and determined the following interarrival rates (see
+Table 7.4).
+Telly continued to collect input data throughout the week and was able to determine the following
+quantitative information would need to be included in the model:
+Average Time Bus Spends at a Stop: Normally distributed 2 minutes with a standard deviation of .3
+minutes.
+Time between Stops (see Table 7.5).
+• Passenger Route Decision Percentages (see Table 7.7).
+• Qualitative Data. The following assumptions were also gathered:
+1) The bus always goes in sequence 1-2-3-4-5 then back to 1.
+2) The bus stops even if no passengers are visible at the stop or desire to be let off.
+3) Bus drivers change shifts without disrupting the schedule.
+As part of the Quality Phase of his simulation project, Telly validated his input data in the following
+ways:
+Observation: He observed the current system and double checked his input data against what he observed.
+Expert's Opinions: He showed the current drivers and ticket sellers his assumptions and input data for
+evaluation.
+Intuition and Experience: He also used his own experience to double check the data.
+Telly continued to check for validation throughout his model development process.

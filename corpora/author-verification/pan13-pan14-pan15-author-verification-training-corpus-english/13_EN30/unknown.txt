@@ -1,0 +1,81 @@
+﻿The previous chapters on controller design have mainly concentrated on introducing the
+compensator in the forward path, but use of a simple compensator in the feedback path has been
+discussed. Also feedback compensation has been mentioned with respect to the PI-PD controller
+and velocity feedback in a position control system. Both these two cases can be regarded as
+feedback of two states, namely, the output to form the error and the derivative of the output. It is
+therefore appropriate to look in general at how the performance of a control system can be
+changed by the feedback of state variables. If this is to be done in practice then the state variables
+have to be available either as measured values or estimates. Obtaining measurements can be
+costly because of the requirement for additional sensors so in many cases the variables are
+estimated using estimation methods. This is a topic outside the scope of this book but it will
+suffice to say that estimation methods have become relatively easy to implement with the use of
+modern technologies employing microprocessors with significant software included to do the
+required computations. In the next section results are derived for full state variable feedback and
+this is followed by a discussion of the linear quadratic regulator problem. The problem of direct
+closed loop transfer function synthesis, or standard forms, is looked at again in terms of using
+state variable feedback to achieve such a design. Finally as an example of the benefits of using a
+state variable feedback design the problem of controlling a plant having a transfer function with
+lightly damped complex poles, considered initially in section 9.5 is reconsidered.
+Consider a SISO system, G, with a state space representation (A,B,C,0). Assume state feedback
+is used so that the system input u K (v k T x)
+c 􀀠􀀐, as shown in Figure 11.1. Here the row vector
+kT, is given by 􀀋. . . . .􀀌1 2 3 n
+k T 􀀠k k k k , which means that the signal fed back and
+subtracted from v is n n k x k x ......k x 1 1 2 2 􀀎. The thick line is used to show that it represents more
+than one signal, in this case the state x which has n components.
+The new system, with input v, is
+which can be written
+where the matrices
+Now suppose the original system was in controllable canonical form so that
+as the matrix T
+c c BK k is all zeros apart from the last row. The gain vector has been subscripted by
+c to denote that it has state inputs from the controllable canonical form.
+Thus the characteristic equation of the system with state feedback is
+and in principle the poles can be placed anywhere by choice of the components of T
+c k . Larger
+values of the components of T
+c k will speed up the system response but in practice this will not be
+possible due to physical limitations on the magnitudes of signals for linear operation. The gain Kc
+is basically redundant, however, it is useful to include it as the structure might, as is clear from
+Figure 11.1, be a resultant closed loop system with Kc the controller gain. In this case the
+controller input will include the error and for this to be the case when the state x1 is the output, k1
+will be equal to one. If the system is not in controllable canonical form then the coefficient terms
+in the characteristic equation will not each involve a single feedback gain. This means that
+simultaneous equations need to be solved to find the required feedback gains to give a specific
+characteristic equation. One way to avoid this is to transform the original system to controllable
+canonical form, determine the required feedback gains for this representation and then transform
+these gains back to the required feedback values from the original states. The system must be
+controllable to do this transformation and it can be shown that this is a required condition to be
+able to place the poles in desired locations. Thus, if the calculated state feedback gain vector is
+kc
+T from the controllable form states xc and the transformation from the original states x is x = Txc
+then the required vector kT for the original states, x, is obtained from the relationship kT = kc
+TT-1.
+Several algorithms are available in MATLAB which calculate the required feedback gain vector
+kT for a given system (A,B) to give specified pole locations
+The feedback signal kTx can be written in transfer function terms as k T􀀩(s)BU and the output
+Y(s) 􀀠C􀀩(s)BU so that in terms of the classical block diagram of Figure 5.1 the state feedback
+is equivalent to a feedback transfer function of
+( )
+( ) ( )
+C s
+H s k s
+T
+􀀩
+􀀩
+􀀠.
+It can be shown [11.1] for a state space representation with matrix A and column vector B that if
+a performance index
+is to be minimised then the required control signal, u(t), is given u(t) 􀀠􀀐k T x(t) , a linear
+function of the state variables. Further the value of the feedback gain vector is given by
+k T 􀀠R􀀐1BT P where P is the unique positive definite symmetrical matrix solution of the
+algebraic Riccati equation (ARE)
+Obviously the solution for kT depends upon the choice of the positive scalar, R, and the matrix Q
+which must be at least semi-positive definite. Although this is a very elegant theoretical result,
+the solution depends on the choice of the weighting matrix Q and scalar R. No simple method is
+available for choosing their values so that the closed loop performance meets a given
+specification. A further point is that whatever values are chosen then the open loop frequency
+response must avoid the circle of unit radius centred at (-1,0) on the Nyquist plot [11.2]. This
+means a phase margin of at least 90°, which makes the design very conservative. The command
+[x,l,g] = care( A,B,cT*c,R) in MATLAB will return the solution P for the ARE in x, where the
+vector c defines the matrix Q by Q 􀀠cT * c .

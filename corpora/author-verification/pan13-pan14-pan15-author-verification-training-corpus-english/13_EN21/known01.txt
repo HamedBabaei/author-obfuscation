@@ -1,0 +1,72 @@
+﻿High-content screening can easily generate more than one Terabyte in primary images and metadata per
+run, that have to be stored and organized, which means an appropriate laboratory information
+management system (LIMS) has to be established. The LIMS must be able to collect, collate and integrate
+the data stream to allow at least searching and rapid evaluation of the data. After image acquisition and
+data transfer, image analysis will be run to extract the metadata. Further evaluation includes testing for
+process errors. Heat maps along with pattern recognition algorithms help to identify artefacts such as
+edge-effects, uneven pipetting, or simply to exclude images that are not in focus. All plates should be
+checked so that the selected positive and negative controls exhibit values in a pre-defined range. Further,
+data may be normalized against controls before further statistical analysis is run to identify putative hits.
+Known proteins of the pathway being screened should score, and are a good internal control for the
+accuracy of the assay and workflow. Hits have to be verified by going back to the original images. Further,
+results have to be compared between independent runs. After this, an appropriate hit verification strategy
+has to be applied as discussed above. Target gene expression should be confirmed, for example, by
+running a microarray analysis of gene expression for the given cell line. Finally, data will be compared to
+other internal and external data sources. Cluster analysis will assist in identifying networks and
+correlations.
+A critical aspect of high content screening is the informatics and data management solution that the user
+needs to implement to process and store the images. Typically multiple images are collected per
+microplate well at different magnifications and processed with pre-optimised algorithms (these are the
+software routines that analyse images, recognize patterns and extract measurements relevant to the
+biological application, enabling the automated quantitative comparison and ranking of compound effects)
+to derive numerical data on multiple parameters. This allows for the quantification of detailed cellular
+measurements that underlie the phenotype
+observed. From an image analysis perspective the following should not be overlooked when reviewing
+vendor offerings: the breadth of biology covered; how the software is delivered, does it run quickly, or
+open a script; is analysis done on-the-fly or offline; have the algorithms been fully validated with biology;
+the ease of exporting image files to other software packages; and access to new algorithms, is the user
+dependent on the supplier or is it relatively easy to develop your own or adapt existing algorithms?
+The key theme and piece of information repeated throughout this chapter is “partnering”. Scientific
+research and informatics must work together for the mutual benefit of screening like the drug discovery
+process. To really be part of the winning team in any organization, all areas must bring their collective
+expertise together and make the extra effort to understand one another and defer where there is lack of
+knowledge to those on the team with the experience and expertise or to seek external advises. It is
+necessary to start off by setting the stage concerning where laboratory computing, which includes the data
+management (we will discuss a bit later in the chapter), has progressed in order to gain the necessary
+understanding of where it currently is and where we anticipate it will be going in the HCS area in the
+future.
+A goal of this chapter is to provide an overview of the key aspects of informatics tools and technologies
+needed for HCS, including characteristics of HCS data; data models/structures for storing HCS data; HCS
+informatics system architectures, data management approaches, hardware and network considerations,
+visualization, data mining technologies, and integrating HCS data with other data and systems.
+HCS systems scan a multiwell plate with cells or cellular components in each well, acquire multiple
+images of cells, and extract multiple features (or measurements) relevant to the biological application,
+resulting in a large quantity of data and images. The amount of data and images generated from a single
+microtiter plate can range from hundreds of megabytes (MB) to multiple gigabytes (GB). One large-scale
+HCS experiment, often resulting in billions of features and millions of images that needs multiple
+terabytes (TB) of storage space. High content informatics tools and infrastructure is needed to manage
+the large volume of HCS data and images.
+There are many rules that are common for the image based HCS informatics infrastructure in academic or
+non academic organization. Answering the following questions analyzed by entire organization tells one
+exactly which strategy and organization setup has to be taken and what type of work has to assign to
+experts and researchers. In choosing the strategy and organization setup one needs to answer the
+following questions:
+• Is the required analysis software available off-the-shelf or must it be written in-house? This
+decision has to be taken in collaboration between IT and scientists, based on the defined
+requirements.
+• What kind of data will be acquired (how many screens in year)?
+• How is the data stored, managed, and protected for short-, medium-, and long-term use?
+• What type of desktop clusters and servers are required for HCS computing? (brand, type, speed,
+and memory)
+• How do the computer systems interface with the necessary data collection instrumentation and
+connect to the network and servers at the same time?
+• Can allowances and accommodations be made for external collaborations and programs shared
+among scientists?
+• Are we interested in setup a safety buffered zone outside of our firewalls to allow this external
+data exchange?
+After analysis of those questions one would think to have dedicated IT person from IT department working
+together with the scientists to allow IT professionals to take over responsibility for informatics tasks. The
+side-by-side person would allow the informatics organization to understand needs of HCS unit. For example
+the servers processes could be placed inside of HCS pipeline or infrastructure and not be placed as usual and
+forced to add extra steps to the workflow. It is also important to decide what will be operated by informatics
+department and what by HCS unit within organization. It makes better sense for informatics department to

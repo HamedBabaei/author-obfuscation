@@ -1,0 +1,78 @@
+﻿A computer simulation project is more than purchasing modeling software, plugging in a few values and
+expecting an answer to a question to pop out. This chapter considers the broader picture that simulation
+encompasses by developing a methodology for starting the process correctly. However, before that is
+discussed, a failed project is examined.
+Simulations can go terribly wrong, particularly if the appropriate infrastructure is not carefully developed
+to support the modeling effort. Few simulation analysts can report that all of their models are flawless.
+The previous example analyzed a real simulation project that became disastrous and the steps taken to
+revive it. Although the model had been accurate, the simulation received criticism and blame for the
+problems. Several pitfalls can be identified by looking at the process in retrospect.
+􀁸First: The simulation analyst was inexperienced. She lacked practical knowledge of the system's
+operation and this slowed initial model development.
+􀁸Second: The simulation 'team' members didn't participate adequately. Although the model
+demonstrated problems did exist, time was not taken to solve these problems as a preventative
+measure. Rather, the system was installed and then problems were tackled at a much higher cost.
+􀁸Third: Goals changed mid-simulation effort. The original simulation was meant to discover if the
+would work. When production fell short, a new goal of 'making it work' became the directive.
+The problems pointed out by this case study could have been avoided if the simulation effort had been
+taken more seriously. If preventative action had addressed system inadequacies early, costly corrections
+and time delays could have been avoided.
+A recent study of discrete event computer simulation projects revealed unsuccessful efforts are
+characterized by high costs, model size constraints, and slow software. In contrast, successful projects are
+characterized by teamwork, cooperation, mentoring, effective communication of outputs, high-quality
+vendor documentation, easily understood software syntax, higher levels of analyst experience, and
+structured approaches to model development. While these findings should not come as a surprise, the
+importance of having a structured methodology for approaching a simulation is apparent. The next
+sections of this textbook provide a detailed view of an approach to help enable simulation project success.
+The process used in this textbook is representative of many possible computer simulation project life
+cycles that have been used in practice and documented in simulation textbooks and journal articles.
+However, remember each simulation project is unique and specific requirements may be better served
+through customizing the steps discussed. In general, the simulation project life cycle described in this
+book consists of six major steps, each having multiple components. The major steps being investigated
+are:
+1. Intelligence Phase. The precursor to any solution is full development and an understanding of the
+underlying dilemma or problem.
+2. Managerial Phase. In general, this step requires interaction with management and other nontechnical
+staff of the organization to acquire necessary resources and support along with the
+formation of a simulation project team.
+3. Developmental Phase. During this phase, the simulation model or models are created. System
+design, detail design, and coding all take place and rely on the interaction of the analysts and other
+members of the simulation team.
+4. Quality Assurance Phase. While the model is being coded in complete or at least in prototype
+form, the analyst must ensure proper validation and verification. The ideas of testing and
+completion or integration are also important here. It may be necessary take testing one step further
+and begin development of face validity through interaction with end-users and management.
+Generally, quality assurance accompanies the entire modeling lifecycle.
+5. Implementation Phase. Model use begins and decision support activities take place.
+6. Operations, Maintenance, and Archival Phase. Development is essentially complete and only
+maintenance tasks remain. This phase may be substantial if the project results in a simulation
+maintained for repeated use
+A simulation project can be a complex organizational undertaking. In general, to believe a simulation
+project starts and ends with coding a model would be a mistake. Much more is involved. In many
+instances, modeling is one small component in a much larger simulation project life cycle. As stated
+previously, a simulation project is inclusive of a wide spectrum of activities ranging from system and
+problem definition to ensuring logic developed in the model can bridge the gap between model and real
+world and be used in actual system implementation. The following sections provide a closer look at the
+mechanics of conducting a professional simulation study.
+4.1 Intelligence
+The intelligence phase of the simulation life cycle involves understanding the environment and
+determining problems to be solved. In general, this phase consists of the simulation analyst or potential
+simulation customer discovering situations that require modeling. The simulation analyst should emerge
+from this phase with knowledge that a problem exists and should have at least a preliminary understanding
+of the problem’s nature. Often, problem definition and feasibility are assessed at this point in time.
+4.1.1 Problem Definition
+In order to ensure simulation project success, several events need to occur before any other work begins.
+First, the customer needs to define objectives for the study. The objectives for the simulation describe
+what questions the simulation needs to answer. In other words, the precursor to any solution is a full
+understanding of the underlying dilemma or problem. Parameters for the problem as well as broad scale
+constraints need to be defined. A simulation project may be driven by a broad statement such as ‘The
+Denver Chamber of Commerce has projected that incoming passenger flights will increase by 50% over
+the next 18 months.” Definition of the problem operationalizes the statement and looks at the system
+environment to clarify goals for analysis.
+For example the problem definition may become:
+Can the existing baggage handling system handle the project increase in passenger arrivals and
+departures?
+Of course, this question could rapidly be replaced with a related:
+What needs to be changed in order to accommodate the expected increase in passenger arrivals and
+departures?
+These sorts of clarifications need to be made early in the simulation life cycle.

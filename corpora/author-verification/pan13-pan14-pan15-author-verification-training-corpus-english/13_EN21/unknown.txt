@@ -1,0 +1,74 @@
+﻿Features are computed values that should be representative of the signal and be reproducible at
+different times. Other criteria for the features will depend on the application, for example:
+􀁸Smaller dimension than the signal;
+􀁸High inter-class variance with low intra-class variance;
+􀁸Robust/enhanced representation of the signal (i.e. invariant to changes caused by noise, scale
+factors etc).
+Examples of simple features are:
+􀁸Mean (but not useful if we set it to zero as a pre-processing step for noise removal);
+􀁸Standard deviation;
+􀁸Energy (which can be computed by using variance after setting mean to zero) - very often,
+we measure the energy in different spectral bands and use them as features. For example, in
+the case of electroencephalogram (EEG), bands like delta, theta, alpha, beta and gamma are
+normally used. To do this, we can filter the signal in the specific band and then compute the
+energy. For example, using MATLAB code (with IIR Elliptic filter):
+Correlation of a test signal with a template signal can be used as a feature. It is a measure of
+similarity between two signals. In MATLAB, we can use R=corrcoef(X,Y) where X is the test
+signal and Y is the template signal. This is useful when we have a template of signals and need to test
+the class/category of the test signal. For example, if we have templates for electrocardiogram (ECG)
+signals from five different heart ailments, then we can use the correlation value from a test ECG
+signal with each of the templates:
+The highest correlation will tell us which activity the test ECG signal is likely to belong. This method
+is more suitable for ECG signals rather than EEG as EEG signals are more ‘random’ as compared to
+ECG signals which generally have more known patterns (such as sinus rhythm, atrial fibrillation etc).
+Autoregressive24 (AR) model is another popular linear feature extraction method for biological
+signals. A real valued, zero mean, stationary, non-deterministic, autoregressive process of order p is
+given by
+where p is the model order, x[n] is the data of the signal at sampled point n, ak are the real valued AR
+coefficients, and e[n] represents the white noise error term independent of past samples. AR
+modelling could be seen as a process to obtain an equation that fits the signal (like in curve fitting).
+AR modelling tries to model the signal assuming that a data point is closely related to the previous
+few data points. This is suitable for modelling biosignals. Many different techniques have been
+proposed to estimate ak such as Yule-Walker (YW) method. However, YW method is
+computationally complex and is erroneous for small data segments due to difficulties in properly
+estimating the autocorrelation function. Hence, recursive algorithms have been proposed to estimate
+ak with order p using ak of previous order p-1. Examples of such methods are Burg’s and Levinson–
+Durbin algorithms but the former is more accurate than the latter since it uses more data points
+simultaneously by minimising not only a forward error but also a backward error [1]. In MATLAB,
+we can compute the ak coefficients using arburg(x,p) function.
+A model order which is too high will overfit the data and represent too much noise but a model order
+which is too small will not sufficiently represent the signal. So a compromise has to be made for the
+model order. There are many methods to compute the model order like Akaike Information Criterion
+(AIC), Final Prediction Error, Criterion Autoregressive Transfer, Minimum Description Length etc [1,
+2]. AIC is most common and its use will be explained here:
+where p is the model order, N is the length of the signal and 2
+p 􀁖is the variance of the error sequence
+at order p. The first component of the AIC function represents the fitting ability (higher order, better
+fit) while the second component represents a penalty function with increasing order. In MATLAB,
+the code [A,E] = arburg(x,p) returns the ak coefficients of signal x in A and error variance in E
+(using order p).
+AIC is computed for order 1 to a certain maximum order (depending on the application, rule of
+thumb is p <N/3, though the selected order is typically lower than N/3) and then the order p that
+minimises the AIC function is chosen to be the optimal order. Also, in general, every additional peak
+in the spectral plot will require increase of two in the model order [2]. So, model order of six will be
+required when using AR method for a combination of three sinusoidal components, each with distinct
+frequency. However, in most cases, it is difficult to know the exact number of spectral peaks and
+methods like AIC should be used to obtain the AR model order.
+For example, using the ECG signal shown in Figure 1.2 and computing AIC (from order 1 to order
+20) gives us the following plot:
+It can be seen that AIC values do not change significantly after model order 4, so order 4 can be
+chosen as the appropriate order.
+AR model can also be used to predict values of a signal. For example, assume that we have a signal x:
+the AR coefficients of order 3 are A = [-0.46 -0.41 -0.10]. In MATLAB, we will get
+AR coefficients in the form [1.0000 -0.4618 -0.4048 -0.1058]; which are the AR
+coefficients obtained if we were to rewrite (5.1):
+Computing x[10] using this 3rd order AR model by ignoring the error term for simplicity, we obtain25
+As an example to illustrate the usage of AR coefficients as features, consider EEG signals obtained during
+two different mental activities26. In Figure 5.2 (a), two EEG plots for one subject are shown from two
+mental activities (mathematical activity and imagining an object being rotated). The abscissa is sampling
+points while the ordinate is amplitude (arbitrary units). Figure 5.2 (b) shows another two EEG plots (one
+from each mental activity taken at another time from the same subject). From these EEG plots, it is
+difficult to differentiate the maths and object rotation activities. But using the 6th order AR coefficients,
+the math and object rotation activities can be differentiated. This is though exact values are not produced
+by the AR model for the same mental activity, the values are sufficiently close within a mental activity
+and sufficiently different across activities (especially the first few AR coefficients).

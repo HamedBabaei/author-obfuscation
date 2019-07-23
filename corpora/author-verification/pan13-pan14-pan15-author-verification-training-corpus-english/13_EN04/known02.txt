@@ -1,0 +1,87 @@
+﻿Simulation languages are versatile, general purpose classes of simulation software that can be used to
+create a multitude of modeling applications. In a sense, these languages are comparable to FORTRAN,
+C#, Visual Basic.net or Java but also include specific features to facilitate the modeling process. Some
+examples of modern simulation languages are GPSS/H, GPSS/PC, SLX, and SIMSCRIPT III. Other
+simulation languages such as SIMAN have been integrated into broader development frameworks. In the
+case of SIMAN, this framework is ARENA. Simulation languages exist for discrete, continuous and
+agent-based modeling paradigms. The remainder of this book will focus on the discrete event family of
+languages.
+Specialized features usually differentiate simulation languages from general programming languages.
+These features are intended to free the analyst from recreating software tools and procedures used by
+virtually all modeling applications. Not only would the development of these features be time consuming
+and difficult, but without them, the consistency of a model could vary and additional debugging,
+validation and verification would be required. Most simulation languages provide the features shown in
+Table 2.1.
+1) Simulation clock or a mechanism for advancing simulated time.
+2) Methods to schedule the occurrence of events.
+3) Tools to collect and analyze statistics concerning the usage of various resources and entities.
+4) Methods for representing constrained resources and the entities using these resources.
+5) Tools for reporting results.
+6) Debugging and error detection facilities.
+7) Random number generators and related sets of tools.
+8) General frameworks for model creation.
+Although many models are written using simulation languages, some analysts still prefer to rely on
+traditional programming languages for model development. In other cases, extensions to a language are
+developed to add capabilities to a traditional language. For instance, Repast Simphony is a free and open
+source, agent-based modeling toolkit that adds features to Java in order to simplify model creation and
+use. This blended approach provides the advantages of both the traditional language and the simulation
+modeling extensions. The motivations behind using a general purpose language include:
+Programmer familiarity: Developers already know the general purpose programming language. They may
+not have the time or inclination to learn a simulation language.
+Flexibility: Programming languages inherently are flexible, giving the analyst freedom to create the model
+using his or her preferred methodology.
+Cost: Programming language software is usually more accessible and far less expensive than specific
+simulation software. This may not always be true since several leading simulation languages can be
+downloaded for no cost. However, other leading simulation language packages can be very expensive.
+Hardware Concern: General purpose software may be available on any hardware platform while some
+simulation languages may require special machines and memory configurations.
+Lack of Analyst Knowledge: The analyst may not understand simulation languages and may lack
+knowledge on the advantages of using a simulation language package.
+Training: Available classes in the use of traditional languages are more likely to be available than
+specialty simulation training.
+Although traditional languages do offer some advantages, most of these are outweighed by features
+standard to many simulation languages. In a typical modeling application, the programmer or analyst will
+find the initial investment in a simulation language more than pays off. A simulation language will
+provide a savings in coding, debugging, analysis of results, and in making changes.
+A variety of simulation languages exist and are used by businesses, researchers, manufacturing and
+service companies, and consultants. The next sections briefly discuss two common simulation languages:
+GPSS and SIMSCRIPT.
+GPSS: General Purpose Simulation System (GPSS) was originally developed by Geoffrey Gordon of IBM
+and released in October of 1961. Following IBM’s release of GPSS to the public domain, it became a
+multivendor simulation language and has been in continuous use since.
+In general, GPSS enjoys widespread popularity due to its sensible world view and overall power. Its basic
+functions can be easily learned while powerful features make it ideal for modeling complex systems. In
+general, GPSS is used to simulate queuing systems that consist of customer entities interacting and
+completing in a system of constrained resources. The resources are structured as networks of blocks that
+entities (also called transactions) enter and use to perform various tasks in certain amounts of simulated
+time. As entities move through these networks, which have been organized to represent a real world
+system, statistics are collected and used to determine if the system contains bottlenecks, is over or under
+utilization, or exhibits other characteristics. Output data is made available for analysis at the end of a
+production run.
+Presently, several vendors offer versions of GPSS. Included are:
+Wolverine Software which produces GPSS/H, a powerful, state-of-the-art version of GPSS engineered to
+allow creation of large, complex models (http://www.wolverinesoftware.com).
+Minuteman Software which produces a user friendly GPSS simulation environment called GPSS World
+that features special model development tools (http://minutemansoftware.com).
+ngolf Ståhl and Beliber AB which produce WebGPSS, a stream-lined version of GPSS, with a focus
+simulation and modeling concept education (http://www.webgpss.com).
+SIMSCRIPT III: This language is a direct descendant of the original SIMSCRIPT language produced at
+Rand Corporation in the 1960's. SIMSCRIPT III has constructs that allow a modeler to approach a
+problem from either a process or an event oriented world view. SIMSCRIPT III offers unique features
+which add to its appeal. Among these are:
+• Object-Oriented Programming
+• Modularity
+• SIMSCRIPT III Development Studio (SimStudio)
+• Object-Oriented Simscript III graphics
+• Data Base Connectivity SDBC
+In general, SIMSCRIPT III is a free form language with English-like syntax. This syntax allows the code
+in the system to become self-documenting. Model components can be programmed clearly enough to
+provide an excellent representation of the organization and logic of the system being simulated.
+SIMSCRIPT III is maintained and distributed at http:// www.simscript.com by CACI Products Company.
+Most discrete event simulation languages model a system by updating the simulation clock to the time that
+the next event is scheduled to occur. Events and their scheduled times of occurrence are maintained
+automatically on one of two ordered lists: the current events chain or the future events chain. The current
+events chain keeps a list of all events that will (or may) occur at the present clock time. The future events
+chain is a record of all events that can occur at some point in the future. A simulation clock moves to the
+next event on the future events chain and changes the system state of the model based on that event’s
+characteristics.

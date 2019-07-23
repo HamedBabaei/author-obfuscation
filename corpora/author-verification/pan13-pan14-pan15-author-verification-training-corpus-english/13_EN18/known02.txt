@@ -1,0 +1,36 @@
+﻿In this chapter you will learn what a variable is, how to declare a variable, i.e. tell the computer that there is a variable in the program, and how to assign values to variables. You will also learn how to perform simple mathematic calculations, how to read values from the keyboard, how to display information on the screen and control where on the screen the information will be displayed. We will also present a number of programming examples with JSP graphs.
+A variable is used by the program to store a calculated or entered value. The program might need the value later, and must then be stored in the computer’s working memory. Example:
+Here we have selected the name ’dTaxpercent’ to hold the value 0.25. You can in principle use any variable name, but it is recommended to use a name that corresponds to the use of the variable. When the variable name appears in a calculation the value will automatically be used, for example:
+means that 1500 will be multiplied by 0.25.
+The purpose of declaring a variable is to tell the program to allocate space in the working memory for the variable. The declaration:
+tells that we have a variable with the name iNo and that is of integer type (int). You must always specify the data type to allocate the correct memory space. An integer might for instance require 4 bytes while a decimal value might require 16 bytes. How many bytes to allocate depends on the operating system. Different operating systems use different amounts of bytes for the different data types. 
+The variable name should tell something about the usage of the variable. Also, a standard used by many people is to allocate 1-3 leading characters to denote the data type (i for integer). 
+Note that each program statement is ended by a semicolon. 
+Below we declare a variable of decimal type:
+double means decimal number with double precision. Compare to float which has single precision. Since double requires twice as many bytes, a double variable can of course store many more decimals, which might be wise in technical calculations which require high precision.
+You can declare several variables of the same type in one single statement:
+The variables are separated by commas. 
+Note that C++ is case sensitive, i.e. a ‘B’ and ‘b’ are considered different characters. Therefore the variables:
+are two different variables.
+Now we have explained how to declare variables, but how do the variables get their values? Look at the following code:
+Here the variable dTaxpercent gets the value 0.25, the variable iNo the value 5 and the variable dUnitprice the value 12. The equal character (=) is used as an assignment operator. Suppose that the next statement is:
+In this statement the variable iNo represents the value 5 and dUnitprice the value 12. The right part is first calculated as 5 * 12 = 60. This value is then assigned to the variable dTotal. Note that it is not the question of an equality in normal math like in the equation x = 60, where x has the value 60. In programming the equal sign means that something happens, namely that the right part is first calculated, and then the variable to the left is assigned that value.
+C++ performs the math operations in correct order. In the statement:
+the multiplication dTotal * dTaxpercent will first be performed, which makes 60 * 0.25 = 15. The value 15 will then be added to dTotal which makes 60 + 15 = 75. The value 75 will finally be assigned to the variable dToBePaid. 
+If C++ would perform the operations in the stated order, we would get the erroneous value 60 + 60, which makes 120, multiplied by 0.25, which makes 30. 
+If you need to perform an addition before a multiplication, you must use parentheses:
+Here the parenthesis is calculated first, which gives 1.25. This is then multiplied by 60, which gives the correct value 75.
+It is possible to initiate a variable, i.e. give it a start value, directly in the declaration:
+Here we declare the variable dTaxpercent and simultaneously specify it to get the value 0.25. 
+You can mix initations and pure declarations in the same program statement:
+In addition to assigning the dTaxpercent a value, we have also declared the variables dTotal and dToBePaid, which not yet have any values. In the statement:
+we have initiated several variables and declared the variable iSum.
+Sometimes a programmer wants to ensure that a variable does not change its value in the program. A variable can of course not change its value if you don’t write code that changes its value. But when there are several programmers in
+the same project, or if a program is to be maintained by another programmer, it might be safe to declare a variable as a constant. Example:
+The key word const ensures that the constant dTaxpercent does not change its value. Therefore, a statement like this is forbidden:
+A constant must be initiated directly by the declaration, i.e. be given a value in the declaration statement. Consequently the following declaration is also forbidden:
+We have seen how a variable can be initiated in the declaration and how the variable can be assigned a value in other parts of the program. A variable can also get new values several times in the program. 
+A variable can furthermore be changed by originating from the current value of the variable. The following example shows how the variable iNo is decreased by 2:
+As we have previously said the right part will first be calculated and then be assigned to the variable on the left side. Suppose that the variable iNo from the beginning has the value 5. The right part will then be 5-2 = 3. 3 is then assigned to the
+variable to the left, i.e. iNo. The effect of this statement is thus that iNo changes its value from 5 to 3, i.e. is decreased by 2. 
+A more compact way of coding giving the same result is:

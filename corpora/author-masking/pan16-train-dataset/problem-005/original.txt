@@ -1,0 +1,71 @@
+﻿How best to archive and mine the complex data derived from HCS experiments that provides a series of
+challenges associated with both the methods used to elicit the RNAi response and the functional data
+gathered? To enable effective data retrieval for HCS experiments, data and images and associated
+information must be stored with high integrity and in a readable form. HCS data should be stored in a
+form that takes advantage of the characteristics of this type of data to enable full access, analysis and
+exploitation of the data. A key factor is the database model which represents data in logical form. The
+data model (or database structure or database schema) should be flexible to handle the various HCS data
+types (i.e., compound information, results: image data and derived metadata), experiment simulation and
+a wide range of changes in the data (e.g., different numbers of wells, cells, features, images, different
+image sizes and formats, different number of time-points, and so on). The structure of the data model
+provides a way of describing data and the relationships within the data, enabling data to be organized,
+cataloged, and searched effectively. Databases where a database model is implemented enable joining of
+related data to allow meaningful visualization, analysis, and data mining. The data model is also
+important for integration with other systems.
+HCS data are containing three types of data:
+1. Database of compounds (RNAi or small molecules).
+2. Numbers of images that require significant amounts of storage.
+3. Numbers of files including image processing parameters.
+4. Meta-data.
+Thus, a large amount of data is collected for just one well of a single plate. In addition, other associated
+information about the assay or experiment, such as protocol information, is also typically recorded.
+Having four types of data is easy to define three general categories of HCS data:
+- Image data: These are the images acquired at each channel for each field within a well and produced
+thumbnails for visualization purposes
+- Numeric Results data: these are the measurements that result from performing an analysis on an image
+with image analysis algorithms.
+- Metadata: These are the associated data that provide context for the other two categories of data (i.e.,
+metadata are data that describes other data). Examples are: well – compound annotation, assay type, plate
+information, protocols, operators, calculated data such as dose–response values, as well as annotations
+imported from other systems.
+Let’s try to understand how data are produced. HCS microscopes typically scan multiwell plates. These
+plates typically have 96, 384, or 1536 wells. Each well is a container in the plate that contains an
+individual sample of cells. Each well is divided into multiple fields. Each field is a region of a well that
+represents an area to image. Each field consists of multiple images, one for each individual wavelength of
+light (referred to as a “channel”, “staining”), corresponding to the fluorescent markers/probes used for the
+biology/dye of interest (e.g., DAPI). There are typically between two and four channels per field (e.g.,
+each channel shows different elements of the cells: 1 channel nuclei, 2 channel: cell membranes, 3
+channel: endosomes, and so on). The images produced are immediately analyzed using automated image
+processing. Experiment results are produced.
+Each well is seeded with a certain number of cells which has to be detected by image processing
+algorithms. The cell number counted is a basic parameter used for the quality control of automation,
+microscopy or assay performance. The number of cells per well varies depending on the experiment, but
+typically ranges between 5 and 10000 cells. Very often images from well fields are merged into one
+image using montage function. For each cell, multiple object features (or measurements) are calculated by
+automated image processing. The cell features include measurements such as size, shape, intensity, and
+so on.
+The number of cell features calculated varies depending on the assay, but typically ranges between 5 and
+500.Those features have to be carefully investigated, filtered and only parameters should be considered
+for hit definition. In addition, cell features are often aggregated to the well level to provide well level
+statistics (one well one row labeled with plate annotation and position as unique identify). The total
+storage size for experiments is primarily based on the acquired image data, image thumbnails, library
+information and the numeric results data. The amount of data, acquisition and processing time varies
+depending on a number of factors including the type of assay, the number of plates, the type of the screen
+(primary, secondary), available computational hardware, the throughput of the instrument or analysis
+application and the number of instruments which can work parallel. Table 2 demonstrates example
+experiments and summarizes necessary time, number of records and require for storage space. The size of
+the library information and numeric results data are counted in megabytes. Numeric results are estimated
+by the number of feature records (lines in tables). Image storage depends on the number of images
+acquired. The number of images depends on plate number, plate type (96, 384, 1536 ), number of fields,
+number of channels, confocality levels and eventually time points in case of kincetic studies. The typical
+image size acquired ranges between 500KB and 2 MB (single slice, single tiff file without montage).
+Thumbnails of those images often are generated using jpeg compression, their size range between 150-
+300 kb. For numeric results data are categorized in three types of outputs: cell based, image based and
+well based. The number of image based record should be equal to the number of acquired images which is
+also equal to the number of thumbnails produced. The record number of well based results data should be
+equal to the number of all wells in screening experiment.
+In high content informatics, the numeric data are supported by the images and the validation of numeric
+data is based on the visual inspection of images. Any high content informatics solution therefore needs to
+be able to efficiently handle the relationships between the various levels of numeric results data, library
+information and the associated images. In the next subsection we will describe a database model (schema)
+and a database solution for handling library data, images and numeric results data.

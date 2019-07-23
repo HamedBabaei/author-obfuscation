@@ -1,0 +1,36 @@
+﻿When working with data from files and databases it is often convenient to process big portions of data in one lump, for instance an entire customer record in a customer file. A good tool for this is the structure concept. A structure is a set of data that in some way has an intermediary relation. 
+In connection with structures we will be using pointers and pointer arithmetics that we learnt in the previous chapter. 
+Structures are a pre-state to classes within object oriented programming. Therefore, this chapter is a bridge to the next step of your programmer education, object oriented programming. 
+In this chapter we will learn how to define structures, handle information stored in structures, work with arrays of structures and files in connection with structures. We will also learn how to use pointers to structures, how to sent structures to a function and store structures in the dynamic memory.
+Think of a customer record in a customer file that contains name, address, telephone, email, discount profile, terms of delivery, terms of payment and so forth. All this information is stored for each customer in the customer file. 
+When reading, processing and saving this information to a file or database it is convenient to be able to handle all data for a customer in a uniform way. It is then gathered into a structure, which provides better organization of the program code. 
+A structure is like a template for all information per customer. A structure behaves in the code like a data type such as int, double or char. You declare a variable of the structure type defined. In the structure variable you can then store all information for a particular customer. 
+You can also create an array of structure items, where each item of the array is a structure with all information per customer. The array will thus contain all information for all customers.
+First we will learn to define a structure template, i.e. specify the shape of the structure, the structure members and the data type of each member of the structure. Suppose we want to work with a product file with: 
+• Product name 
+• Product id 
+• Price 
+• Quantity in stock 
+• Supplier 
+This means that each product in the file will contain these five members.
+Here is the code for definition of the structure:
+First there is the keyword struct, and then the name of the structure or data type (Prod). Within curly brackets you then enumerate the members of the structure, where each member is declared in the usual way of declaring variables. Each member is ended with a semicolon. After the last right curly bracket there must also be a semicolon. 
+The structure above shows that the different members can be of different data types (char, int, double) and also arrays like cName. You can also have other structures as members of the structure, if applicable. 
+The names of the structure and members are of course arbitrarily selected, but they should in some way correspond to their usage.
+To declare a structure variable, i.e. a variable of the data type Prod, you write:
+Here we declare a variable prodOne which is of the Prod type. You can also initiate it with values already in the declaration:
+Within curly brackets we enumerate values for the structure members in the correct sequence, separated by commas. The data types of the values must correspond to the definition of the members.
+When updating, copying or in other ways processing the value of a structure member, you use the following way of coding:
+You write the name of the structure variable, followed by a period and the name of the member in question. Here the quantity in stock will be set to 251 for the ‘Oliv Oil’ product. Or:
+This requires that cString is a string array whose content is copied to the cSupp member.
+We will now create an entire program using structures. We will create a product structure according to the previous example and two structure variables with product information. One of them should be initiated directly in the declaration and the other is supposed to be supplied with information from the user. Finally the program should print a table of the products. 
+We start with a JSP graph:
+The logic is simple. The most difficult task is to handle the structure in the correct way. Here is the code:
+The definition of the structure is before main(), which makes it valid for the entire program, also inside functions. You can also define the structure inside main(), but then it is only valid in main() and not in other functions. 
+The first structure variable prodOne is initiated with values directly in the declaration. Then there are a number of heading texts and entry of values to the structure members of the second structure variable. Note that we use a period between the structure variable and member.
+The output is done by means of tabs \t. You might need to accommodate the length of the entered texts to make the information be printed in the correct column. We could have done that more flexible by means of the text formatting functions from chapter 1, but we used a rough method for simplicity’s sake.
+A disadvantage with the previous program is that we needed a separate structure variable (prodOne, prodTwo) for each product. A more convenient solution is to use an array with structure variables allowing the use of a loop to process the structure variables in a uniform way. 
+Below we declare a structure array sProds of the type Prod with three items:
+We have allocated memory space for three products, but we have not yet assigned values to the structure members. That could be made directly at the declaration:
+Note that the values for each structure variable are surrounded by curly brackets, and that the values are enumerated in the usual way within each pair of curly brackets. All three pair of brackets are surrounded by an extra pair of curly brackets delimiting the initiation list of values. After the last bracket there must be a semicolon. 
+If you want to let the user enter values, this is preferably done in a loop:

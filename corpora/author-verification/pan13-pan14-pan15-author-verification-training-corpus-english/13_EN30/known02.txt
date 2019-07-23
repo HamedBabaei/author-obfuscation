@@ -1,0 +1,62 @@
+﻿A digital system is also refereed as a digital processor, which is capable of carrying out a DSP function or operation. The
+digital system takes variety of forms, such as a microprocessor, a programmed general-purpose computer, a part of digital
+device or a piece of computing software.
+Among digital systems, linear time-invariant (LTI) systems are basic and common. For those reasons, it will be restricted
+to address about only the LTI systems in this whole book.
+The linearity is an important and realistic assumption in dealing with a large number of digital systems, which satisfies
+the following relationships between input and output described by Figure 3.1. i.e. a single input [ ] 1 x n produces a single
+output [ ] 1 y n , Applying sum of inputs [ ] [ ] 1 2 x n + x n produces [ ] [ ] 1 2 y n + y n , and applying input [ ] [ ] 1 2 ax n bx n
+generates [ ] [ ] 1 2 ay n by n .
+The linearity can be described as the combination of a scaling rule and a superposition rule. The time-invariance requires
+the function of the system does not vary with the time. e.g. a cash register at a supermarket adds all costs of purchased
+items x[n], x[n −1],… at check-out during the period of interest, and the total cost y[n] is given by
+where y[n] is the total cost, and if x[0] is an item registered at this moment, x[−1] then is the item at the last moment,
+etc. The calculation method as a simple sum of all those item’s costs is assumed to remain invariant at the supermarket,
+at least, for the period of interest.
+Like a differential equation is used to describe the relationship between its input and output of a continuous system, a
+difference equation can be used to characterise the relationship between the input and output of a digital system. Many
+systems in real life can be described by a continuous form of differential equations. When a differential equation takes a
+discrete form, it generates a difference equation. For example, a first order differential equation is commonly a mathematical
+model for describing a heater’s rising temperature, water level drop of a leaking tank, etc:
+where x[n] is the input and y[n] is the output. For digital case, the derivative can be described as
+i.e. the ratio of the difference between the current sample and one backward sample to the time interval of the two samples.
+Therefore, the differential equation can be approximately represented by a difference equation:
+yielding a standard form difference equation:
+For input’s derivative, we have similar digital form as
+Further, the second order derivative in a differential equation contains can be discretised as
+When the output can be expressed only by the input and shifted input, the difference equation is called non-recursive
+equation, such as
+On the other hand, if the output is expressed by the shifted output, the difference equation is a recursive equation, such as
+where the output y[n] is expressed by it shifted signals y[n −1] , y[n − 2], etc. In general, an LTI processor can be
+represented as
+or a short form
+A difference equation is not necessarily from the digitization of differential equation. It can originally take digital form,
+such as the difference equation in Eq.(3.1).
+Alternatively, equivalent to the difference equation, an LTI system can also be represented by a block diagram, which also
+characterises the input and output relationship for the system.
+For example, to draw a block diagram for the digital system described by the difference equation:
+The output can be rewrite as
+The block diagram for the system is shown in Figure 3.2.
+In the bock diagram, T is the sampling interval, which acts as a delay or right-shift by one sample in time. For general
+cases, instead of Eq.(3.9), Eq. (3.8) is used for drawing a block diagram. It can easily begin with the input, output flows
+and the summation operator, then add input and output branches.
+Both the difference equation and block diagram can be used to describe a digital system. Furthermore, the impulse response
+can also be used to represent the relationship between input and output of a digital system. As the terms suggest, impulse
+response is the response to the simplest input – unit impulse. Figure 3.2 illustrates a digital LTI system, in which the input
+is the unit impulse and the output is the impulse response.
+Once the impulse response of a system is known, it can be expected that the response to other types of input can be derived.
+An LTI system can be classified as causal or non-causal. A causal system is refereeing to those in which the response is no
+earlier than input, or h[n] =0 before n=0. This is the case for most of practical systems or the systems in the natural world.
+However, non-causal system can exist if the response is arranged, such as programmed, to be earlier than the excitation.
+The impulse response of a system can be evaluated from its difference equation. Following are the examples of finding
+the values of impulse responses from difference equations
+Example 3.1 Evaluating the impulse response for the following systems 
+We know that when the input is the simplest unit impulse d[n], the output response will be the impulse response. Therefore,
+replacing input x[n] by d[n] and response y[n] by h[n], the equation is still holding and has become special:
+It is easy to evaluate the impulse response by letting n=-1, 0,1,2,3,…
+Generally for the difference equation:
+The impulse response can evaluated by the special equation with the simple unit impulse input:
+The step response is also commonly used to characterize the relationship between the input and output of a system. To
+find the step response using the impulse response, we know that the unit step can be expressed by unit impulses as
+The linear system satisfies the superposition rule. Therefore, the step response is a sum of a series of impulse responses
+excited by a series of shifted unit impulses. i.e., the step response is a sum of impulse responses

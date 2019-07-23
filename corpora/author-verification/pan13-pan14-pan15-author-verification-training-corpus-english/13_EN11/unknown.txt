@@ -1,0 +1,70 @@
+﻿Consider a periodic digital signal x[n], n=0,1,2,...,N-1, where N is the number of sample values in each period. From
+Euler’s complex exponential equation:
+for each frequency k, Eq. (4.1) contains 2 sinusoidal functions in real and imaginary parts, respectively, with p/2 difference
+in phase. The frequencies of the functions are k=0,1,2,...,N-1. The fundamental sinusoidal function is when the frequency
+k=1. The other higher sinusoidal functions are called harmonics. The coefficients of Fourier Series for a digital signal can
+be calculated by
+where k a is kth spectral coefficient, indicating the strength of the kth harmonic function. The original digital signal x[n]
+can be represented by its constituent harmonics as the form of discrete Fourier series:
+The following Figure 4.1 illustrates how many complex multiplications are required in calculating those coefficients k a
+and from k a to obtaining x[n]. It is basically N 2 in each occasion.
+Example 4.1 A periodic signal x[n] = [0 2 4 6] has the period N=4, its coefficients of Fourier series can be calculated
+by the formula
+Figure 4.2 illustrates one period of the signal and its spectral coefficients.
+Example 4.2 A sine wave
+k=4 and N=64, the sine wave and its Fourier spectrum are shown
+in the following Figure 4.3. It can be seen that the single sine wave gives a single spectral line at frequencies of 4 hz and
+64-4=60 hz, or
+The Fourier series introduced in previous section is only applicable to periodic signals. In general cases, the signal is
+not periodic, and the Fourier series formula Eq. (4.2) is not applicable. Therefore, a Fourier Transform for non-periodic
+signals must be introduced.
+Let frequency (rad/sample) changes continuously between 0 and 2p. This can be achieved by assuming N is
+big enough and the fundamental frequency is very small. Define a Fourier transform as
+where X (W) is the Fourier spectrum, which is a continuous function, therefore, usual round brackets are used. It is also
+a periodic function with a period of 2p as sinusoidal functions are multiplied in the transform.
+Assuming N is big and using Eq.(4.3), the inverse Fourier transform can be defined:
+Consider digital LTI systems, take Fourier transform for the input, impulse response and output:
+where H(W) is known as the frequency response, which describes the gain of a system at different frequencies and can
+be obtained by taking Fourier transform to the impulse response. The input-output relationship in the time and frequency
+domains, and the time-frequency relationships of the three quantities are shown in Figure 4.4.
+Using the convolution property of the Fourier transform, for the input-output relationship
+apply the Fourier transform on both sides, it can be obtained
+The frequency response can be obtained from the transforms of input and output:
+Find the frequency response and sketch its magnitude and phase over the range 0<W<p.
+Solution: Re-arrange the difference equation as
+Let x[n] be a signal discretized with a sampling rate of fs Hz, we are about to find the position of peak for a complex
+harmonic component with frequency in the frequency Ω (rad/sample) domain. Its Fourier
+transform is given by
+In the previous chapters, time domain and frequency domain analysis have been introduced. In each of those domains
+different insights of digital signals are revealed. It is useful to introduce another domain: the z domain. A digital time
+signal can be transferred into z domain by the z-transform. The z-transform is defined as
+where z is a complex variable. The transform defined by Eq. (5.1) is a unilateral transform as defined on one side of the
+axis 0 ≤ n < ∞. In the transform, each sample x[n] is multiplied by the complex variable z −n , i.e.
+There is advantage in this unilateral transform definition as it can avoid mathematical inconvenience. One can shift the
+signal of interest to obtain a required origin in its analysis, thus usually causing no trouble in applications.
+The inverse z-transform can be found by
+It involves contour integration, and further discussion is beyond the scope of this basic content. However, an alternative
+approach is available using partial fractions together with z-transform formulas of basic functions. Table 5.1 lists the basic
+properties of the z transform and Table 5.2 lists some basic z- transform pairs.
+Example 5.1 Find the z transform for a signal and reconstruct a signal from its z-transform.
+Let z = exp( jW) , i.e. the complex variable z is only allowed on the unit circle, the z-transform becomes a unilateral
+Fourier transform
+Obviously, apart from on the unit circle, the complex operator z can be specified into other curves or region, if necessary.
+Later, it will be shown the unit circle is important boundary on the z-domain.
+Multiplying by z implies a time advance and dividing by z, or multiplying by z −1 , is to cause a time delay. For the unit
+impulse,
+The transfer function describes the input-output relationship, or the transmissibility between input and output, in the
+z-domain. Applying the z-transform to the output of a system, the relationship between the z-transforms of input and
+output can be found:
+i.e., the transfer function can be obtained from the z-transforms of input and output.
+Alternatively, the transfer function H(z) can be obtained by applying z-transform directly to the impulse response h[n]
+. The relationships of input ( x[n] and X (z) ), output ( y[n] and Y(z) ) and system function ( h[n] and H(z) ) in
+the time and z domains are depicted in Figure 5.2.
+Instead of using Eq.(5.2), the inverse z-transform can be made through partial fractions. The following are examples.
+Example 5.2 A signal has a z-transform
+find the corresponding original signal x[n].
+The z-transform can be represented by partial fractions as
+There is an alternative way of finding the coefficients for the partial fractions. For the above example,
+poles and zeros
+For the z-transform of a digital signal or a transfer function of an LTI system, generally it can be expressed as factorised
+form for both the

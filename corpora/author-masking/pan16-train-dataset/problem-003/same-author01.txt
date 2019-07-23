@@ -1,0 +1,36 @@
+﻿Programming is not only coding. Primarily it implies structuring of the solution to a problem and then refine the solution step by step. When refined to a level deep enough, you have created an algorithm. Then it is time to translate each step of the algorithm to program code. 
+Suppose you have a problem that needs to be solved. Then you begin with writing a sequence of operations at an overview level that need to be performed to solve the problem. Then you start from the beginning again and focus on one operation at a time and find out whether the operation needs to be refined to more detailed steps. Then you proceed to the next level and refine further. This refinement process goes on until you arrive at a level deep enough to start coding. 
+Creating an algorithm to solve a problem is in general the most laboursome task of the programming work. Many people do the mistake of starting to code at once, which makes you focus on code details and forget the actual problem to be solved. That gives an unstructured and inefficient code hard to understand and maintain. 
+That’s why we emphasize that you structure your logic train of thought and construct a good algorithm before starting to code.
+A JSP graph is a tool to create an algorithm. JSP is an abbreviation for Jackson Structured Programming and is a commonly used instrument for logic structuring. Let’s take an example. 
+You are supposed to create a program that calculates the price of a product to be bought by a customer. The customer specifies the product id and the requested quantity. The program should then calculate the relevant discount, add tax and show the customer price. A JSP graph could look as follows: 
+University West, Trollhättan Structured Programming with C++ Department of Economy and Informatics calculate the relevant discount, add tax and show the customer price. A JSP graph could look as follows
+The upper box is the name of the program. We have split the solution into four steps at an overview level. You read the steps from left to right. As you probably realize the algorithm is too rough to be able to write code. So we proceed by refining the solution to the next level:
+The box ”Enter information” has been split into two steps, “Show instructions to the user” and “Read product id & quantity”. In the same way we have refined the box “Deduct discount”. 
+We could break down the box ”Calculate gross price” further:
+We could refine the algorithm further, but let us say that we are satisfied with the detail level. The shadowed boxes in the graph are the end points at the lowest level, the “leaves of the tree”. These are the boxes to be used for coding, from left to right. 
+We will work a great deal with JSP graphs in the program examples of the course.
+Each program is logically built up from three basic logic principles: 
+• Sequence – the program performs instructions in sequence, one after the other.
+• Selection – the program selects one of several operations depending on the prerequisites. The program thus makes a selection based on some condition. 
+• Iteration – the program repeats a series of instructions a certain number of times. 
+The logic principles can also be combined. For instance, a sequence of instructions can be repeated a number of times if a specific condition is satisfied, otherwise another sequence of instructions should be performed a specific number of times. 
+All programming languages use these three logic principles. If you have built up your algorithm in a correct way, it is only a question of selecting a programming language when the coding is to take place. The price calculation algorithm above should consequently give the same result irrespective of whether the code is written in C++, Java or VisualBasic. 
+In the JSP graph above the box “Calculate gross price” is refined in a sequence of three operations, from left to right: 
+• Look for the product in product file 
+• Pick the product’s price 
+• Multiply by quantity 
+The box ”Look for the product in product file” could suggest an iteration, e.g. “Read next product id until we find the product id stated by the user”. 
+The discount calculation in the price program above could imply a more differentiated discount situation: 
+• If the gross price is between 100:- and 500:- the customer will get 5% discount. 
+• If the gross price is between 500:- and 1000:- the customer will get 8% discount. 
+• If the gross price is above 1000:- the customer will get 10% discount. 
+Here the program must do a selection.
+When you have refined your algorithm to a level detailed enough, it is time to write code. This written code is called source code. The code must of course follow the rules in effect for the programming language in question, it must follow the syntax. Each programming language has its own rules. 
+You can in principle use any word processor or text editor you like, such as the program Notepad, Wordpad or Word. If you use word processors like Wordpad or Word, you must save the file as pure text file (.txt). 
+It is however recommended to use the text editor present in the program development package you are using. The advantage is that you will get some support when coding. Microsoft Visual C++, which is the program development package used in this course, contains an editor which: 
+• Shows key words in C++ in blue colour and comments in green colour, 
+• Provides IntelliSense, i.e. proposes code alternatives in certain situations, 
+• Supports context sensitive help, i.e. shows an explanation of a certain code item if you put the cursor on the item and press F1, 
+• Provides extensive support at debugging by allowing you to execute the code up to a certain breakpoint, where you can examine variable values at this particular position. 
+There are other development tools for C++ like Borland and Dev C++. The tools differ somewhat as concerns small details of the code. You can use any tool, the important thing is that you learn to “think” structured programming. In this course we have used Microsoft Visual C++ 2008, and all program examples are tested in this environment.

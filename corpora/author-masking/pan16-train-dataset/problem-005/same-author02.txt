@@ -1,0 +1,73 @@
+﻿Within the last few years a large number of tools and softwares dealing with different computational
+problems related to HCS have been developed. Incorporating third party or new tools into existing
+frameworks needs a flexible, modular and customizable workflow framework. Workflow (Pipeline)
+systems could become crucial for enabling HCS researchers doing large scale experiments to deal with
+this data explosion. The workflow is termed abstract in that it is not yet fully functional but the actual
+components are in place and in the requisite order. In general, workflow systems concentrate on the
+creation of abstract process workflows to which data can be applied when the design process is complete.
+In contrast, workflow systems in the life sciences domain are often based on a data-flow model, due to the
+data-centric and data-driven nature of many scientific analyses. A comprehensive understanding of
+biological phenomena can be achieved only through the integration of all available biological information
+and different data analysis tools and applications. In general, an ideal workflow system in HCS can
+integrate nearly all standard tools and software. For example, for an HCS using small molecules, the
+workflow system must be able to integrate different image processing software and data mining toolkits
+with flexibility. The possibility that any single software covers all possible domains and data models is
+nearly zero. No one vendor or source can provide all the tools needed by HCS informatics. So it is
+suggested that one uses specialized tools from specialized sources. Also not all softwares components can
+be integrated with all workflow systems.
+Workflow environment helps also HCS researchers to perform the integration themselves without
+involving of any programming. A workflow system allows the construction of complex in silico
+experiments in the form of workflows and data pipelines. Data pipelining is a relatively simple concept.
+Visual representation of the workflow process logic is generally carried out using a Graphical User
+Interface where different types of nodes (data transformation point) or software components are available
+for connection through edges or pipes that define the workflow process. Graphical User Interfaces
+provide drag and drop utilities for creating an abstract workflow, also known as “visual programming”.
+The anatomy of a workflow node or component (Fig. 3) is basically defined by three parameters: input
+metadata, transformation rules, algorithms or user parameters and output metadata. Nodes can be plugged
+together only if the output of one, previous (set of) node(s) represents the mandatory input requirements
+of the following node. Thus, the essential description of a node actually comprises only in -and output
+that are described fully in terms of data types and their semantics. The user can create workflows using
+any combination of the available tools, readers, writers or database connections in workflow system by
+dragging/dropping and linking graphical icons. The component properties are best described by the input
+metadata, output metadata and user defined parameters or transformation rules. The input ports can be
+constrained to only accept data of a specific type such as those provided by another component. An HCS
+workflow design is best carried out in phases. In the first phase, a conceptual workflow is generated. A
+conceptual workflow, as the name suggests, is a sequential arrangement of different components that the
+user may require to accomplish the given task. It is possible that some of those steps may in turn be
+composed of several sub components. The next phase converts the conceptual workflow into an abstract
+workflow by performing a visual drag and drop of the individual components that were figured to be a
+part of the workflow in the first phase. The workflow is termed abstract in that it is not yet fully
+functional but the actual components are in place and in the requisite order. In general, workflow systems
+concentrate on the creation of abstract process workflows to which data can be applied when the design
+process is complete. HCS screening workflows are based on a dataflow which integrate most of the
+available, standard software tools (either commercial or public domain) along with different classes of
+programmable toolkits. As an example, Figure 3 shows a workflow designed to be run by the HCDCKNIME
+Workflow Management System ( http://hcdc.ethz.ch). This workflow is used by HCS facilities. It
+obtains RNAi from databases, annotates them, make dilutions steps, barcode handling, split volume. In
+this case, the tasks, also known as steps, nodes, activities, processors or components, represent either the
+invocation of a remote Web service (the databases), or the execution of a local recalculation. Data-flows
+along data links from the outputs of a task to the inputs of another, is prepared according to a pre-defined
+graph topology. The workflow defines how the output produced by one task is to be consumed by a
+subsequent task, a feature referred to as orchestration of a flow of data.
+Any computational component or node has data inputs and data outputs. Data pipelining views these
+nodes as being connected together by ‘pipes’ through which the data flows (Figure 4).
+Workflow technology is a generic mechanism to integrate diverse types of available resources (databases,
+microscopes, servers, software applications and different services) which facilitates data exchange within
+screening environment. Users without programming skill can easily incorporate and access diverse
+instruments, image processing tools and produced data to develop their own screening workflow for
+analysis. In this section, we will discuss the usage of existing workflow systems in HCS and the trends in
+applications of workflow based systems.
+Many free and commercial software packages are now available to analyse HCS data sets using statistical
+method or classification, although it is still difficult to find a single off-the-shelf software package that
+answers all the questions of HCS analysis. Statistical open source software packages such as
+BioConductor (www.bioconductor.org) provide large collections of methods suitable for HCS data
+analysis.
+However, their command-line usage can be too demanding for users without adequate computer
+knowledge. As an alternative, software packages where users can upload their data and receive their
+processed results are becoming increasingly common: Weka25, CellAnalyzer4, CellHTS3, TreeView21
+have all been published within the last year. Unfortunately, these services often allow only limited
+freedom in the choice and arrangement of processing steps. Other, more flexible tools, such as Eclipse6,
+KNIME13, JOpera2, operate either stand-alone or require considerable computer knowledge and extra
+software to run through the web. In order to make use of the vast variety of data analysis methods around,
+it is essential that such an environment is easy and intuitive to use, allows for quick and interactive
+changes to the analysis process and enables the user to visually explore the results.

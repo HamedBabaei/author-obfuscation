@@ -1,0 +1,64 @@
+﻿Digital signal processing (DSP) has become a common tool for many disciplines. The topic includes the methods of dealing
+with digital signals and digital systems. The techniques are useful for all the branches of natural and social sciences which
+involve data acquisition, analysis and management, such as engineering, physics, chemistry, meteorology, information
+systems, financial and social services. Before the digital era, signal processing devices were dominated by analogue type.
+The major reason for DSP advancement and shift from analogue is the extraordinary growth and popularization of digital
+microelectronics and computing technology.
+The reason that digital becomes a trend to replace analogue systems, apart from it is a format that microprocessors can be
+easily used to carry out functions, high quality data storage, transmission and sophisticated data management are the other
+advantages. In addition, only 0s and 1s are used to represent a digital signal, noise can easily be suppressed or removed.
+The quality of reproduction is high and independent of the medium used or the number of reproduction. Digital images
+are two dimensional digital signals, which represent another wide application of digital signals. Digital machine vision,
+photographing and videoing are already widely used in various areas.
+In the field of signal processing, a signal is defined as a quantity which carries information. An analogue signal is a signal
+represented by a continuous varying quantity. A digital signal is a signal represented by a sequence of discrete values of
+a quantity. The digital signal is the only form for which the modern microprocessor can take and exercise its powerful
+functions. Examples of digital signals which are in common use include digital sound and imaging, digital television,
+digital communications, audio and video devices.
+To process a signal is to make numerical manipulation for signal samples. The objective of processing a signal can be to
+detect the trend, to extract a wanted signal from a mixture of various signal components including unwanted noise, to
+look at the patterns present in a signal for understanding underlying physical processes in the real world. To analyse a
+digital system is to find out the relationship between input and output, or to design a processor with pre-defined functions,
+such as filtering and amplifying under applied certain frequency range requirements. A digital signal or a digital system
+can be analysed in time domain, frequency domain or complex domain, etc.
+Representation of digital signals can be specific or generic. A digital signal is refereed to a series of numerical numbers,
+such as:
+where 2, 4, 6 are samples and the whole set of samples is called a signal. In a generic form, a digital signal can be represented
+as time-equally spaced data
+where -1, 0, 1, 2 etc are the sample numbers, x[0], x[1], x[2], etc are samples. The square brackets represent the digital
+form. The signal can be represented as a compact form
+In the signal, x[-1], x[1], x[100], etc, are the samples, n is the sample number. The values of a digital signal are only being
+defined at the sample number variable n , which indicates the occurrence order of samples and may be given a specific
+unit of time, such as second, hour, year or even century, in specific applications.
+We can have many digital signal examples:
+-- Midday temperature at Brighton city, measured on successive days,
+-- Daily share price,
+-- Monthly cost in telephone bills,
+-- Student number enrolled on a course,
+-- Numbers of vehicles passing a bridge, etc.
+Examples of digital signal processing can be given in the following:
+Example 1.1 To obtain a past 7 day’s average temperature sequence. The averaged temperature sequence for past 7 days is
+For example, if n=0 represents today, the past 7 days average is
+where x[0], x[−1], x[−2], ... represent the temperatures of today, yesterday, the day before yesterday, …; y[0]
+represents the average of past 7 days temperature from today and including today. On the other hand,
+represents the average of past 7 days temperature observed from tomorrow and including tomorrow, and so on. In a
+shorter form, the new sequence of averaged temperature can be written as
+where x[n] is the temperature sequence signal and y[n] is the new averaged temperature sequence. The purpose of average
+can be used to indicate the trend. The averaging acts as a low-pass filter, in which fast fluctuations have been removed as
+a result. Therefore, the sequence y[n] will be smoother than x[n].
+Example 1.2. To obtain the past M day simple moving averages of share prices, let x[n] denotes the close price, y [n] M
+the averaged close price over past M days.
+For example, M=20 day simple moving average is used to indicate 20 day trend of a share price. M=5, 120, 250 (trading
+days) are usually used for indicating 1 week, half year and one year trends, respectively. Figure 1.1 shows a share’s prices
+with moving averages of different trading days.
+Although some signals are originally digital, such as population data, number of vehicles and share prices, many practical
+signals start off in analogue form. They are continuous signals, such as human’s blood pressure, temperature and heart
+pulses. A continuous signal can be first converted to a proportional voltage waveform by a suitable transducer, i.e. the
+analogue signal is generated. Then, for adapting digital processor, the signal has to be converted into digital form by
+taking samples. Those samples are usually equally spaced in time for easy processing and interpretation. Figure 1.2 shows
+a analogue signal and its digital signal by sampling with equal time intervals. The upper is the analogue signal x(t) and the
+lower is the digital signal sampled at time t = nT, where n is the sample number and T is the sampling interval. Therefore,
+For ease of storage or digital processing, an analogue signal must be sampled into a digital signal. The continuous signal
+is being taken sample at equal time interval and represented by a set of members. First of all, a major question about it
+is how often should an analogue signal be sampled, or how frequent the sampling can be enough to represent the details
+of the original signal.

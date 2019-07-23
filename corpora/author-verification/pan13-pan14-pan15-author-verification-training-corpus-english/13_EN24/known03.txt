@@ -1,0 +1,35 @@
+﻿In this chapter you will learn to incorporate intelligence into your programs, i.e. the program can do different things depending on different conditions (selections). You will also learn how to repeat certain tasks a specific number of times or until a specific condition is fulfilled (iteration, loop). We will introduce new symbols in our JSP graphs to illustrate selections and loops.
+A selection situation can be illustrated by the following figure:
+If the condition is fulfilled (yes option) the program will do one thing, else (no option) another thing.
+The keyword if introduces the if statement. The condition is put within parentheses. If the condition is true statement1 will be performed, otherwise statement2. Here is a code example:
+The values of two variables are compared. If a is greater than b, the variable greatest will get a’s value. Otherwise, i.e. if b is greater than or equal to a, greatest will get b’s value. The result from this code section is that the variable greatest will contain the greatest of a and b.
+Sometimes you might want to perform more than one statement for an option. Then you must surround the statements with curly brackets:
+If the condition is true all statements in the first code section will be executed, otherwise all statements in the second code section will be executed. Example:
+If a is greater than b, the variable greatest will get a’s value and the text “a is greatest” will be printed. Otherwise the variable greatest will get b’s value and the text “b is greatest” will be printed. 
+Sometimes you don’t want to do anything at all in the else case. Then the else section is simply omitted like in the following example:
+If the variable sum is greater than 1000 the variable dDiscPercent will get the value 20 and the text “You will get 20% discount” will be printed. Otherwise nothing will be executed and the program goes on with the statements after the last curly bracket.
+We will now create a program that calculates the total price of a product. The user is supposed to enter quantity and price per unit of the product. If the total exceeds 500:- you will get 10 % discount, otherwise 0 %. We start with a JSP graph:
+All boxes except “Calculate discount” are rather simple to code. “Calculate discount” requires a closer examination. It has a condition included which says that the discount is different depending on whether gross is less or greater than 500. We’ll break down that box:
+A conditional situation in JSP is identified by a ring in the upper right corner of the box. That implies that only one of the boxes will be executed. Here is the code:
+The declaration shows a constant dLimit, which later is used to check the gross value. The variable iNo is used to store the entered quantity and dUnitPrice is used for the entered unit price. 
+It is common among programmers to use one or a few characters in the beginning of the variable name to signify the data type of the variable. The variable iNo has first character I (integer), and the variable dUnitPrice has d (double). 
+After data entry the gross is calculated by multiplying the two entered values (quantity * unit price). That value is stored in the variable dGross. 
+The if statement then checks the value of dGross. If greater than dLimit (i.e. 500) the variable dDisc will get the value 10, otherwise 0. dDisc contains the discount percent to be applied. 
+The net is then calculated by subtracting the discount percent from 100, which then is multiplied by dGross and divided by 100 (to compensate for the percent value). 
+Finally the total price is printed.
+In the if statements in previous example codes we have so far only used the comparison operator > (greater than). Here is a list of all comparison operators:
+In some situations you will need to check whether a number is evenly dividable by another number. Then the modulus operator % is used. Below are some code examples of how to check whether a number is odd or even, i.e. evenly dividable by 2.
+We will now study an example of a more complicated situation. Suppose the following conditions prevail: 
+If a customer buys more than 100 pieces, he will get 20% discount. Otherwise if the quantity exceeds 50, i.e. lies in the interval 50-100, he will get 10%. Otherwise, i.e. if the quantity is below 50, no discount is given. The situation is shown by the following JSP graph:
+Here we use the keyword else if. 
+You can use any number of else if-s to cover many conditional cases.
+The situation with different discount percentages for different quantity intervals can be solved in another way, namely by combining two conditions. In common English it can be expressed like this: 
+If the quantity is less than 100 and the quantity is greater than 50, the customer will get 10% discount. 
+Here we combine two conditions: - If the quantity is less than 100
+and - and the quantity is greater than 50 
+The combination of the conditions means that the quantity lies in the interval 50-100. Both conditions must be fulfilled in order to get 10%. The conditions are combined with “and” which is a logical operator. It is written && in C++. The code will then be:
+Suppose the situation is this: 
+If the quantity is greater than 100 or the total order sum is greater than 1000, the customer will get 20% discount. 
+Here we combine the conditions: - If the quantity is greater than 100 eller - or the total order sum is greater than 1000 
+In both cases the customer has bought so much that he will get 20% discount. One of the conditions is sufficient to get that discount. The conditions are combined with the logic operator “or”, which is written || in C++. The code for this situation will be:
+In many situations you cannot predict what a user is going to enter. It might happen that the user enters characters when the program expects integers, or that he does not enter anything at all but just press Enter. Then you can use conditional input:
